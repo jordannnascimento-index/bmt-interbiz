@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO -->
+  <title>Inicie uma Conversa | BMT-Interbiz</title>
+  <meta name="description" content="Converse com a BMT sobre sua próxima operação de importação ou exportação. As tratativas iniciais têm foco em compreender requisitos operacionais e avaliar como a execução pode ser estruturada." />
+  <meta name="author" content="BMT-Interbiz" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bmt-interbiz.com/contato.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bmt-interbiz.com/contato.html" />
+  <meta property="og:title" content="Inicie uma Conversa | BMT-Interbiz" />
+  <meta property="og:description" content="Converse com a BMT sobre sua próxima operação de importação ou exportação e avalie como a execução estruturada pode apoiar resultados mais confiáveis." />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="BMT-Interbiz" />
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="pt-BR" href="https://bmt-interbiz.com/contato.html" />
+  <link rel="alternate" hreflang="en" href="https://bmt-interbiz.com/en/contact.html" />
+  <link rel="alternate" hreflang="es" href="https://bmt-interbiz.com/es/contacto.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon-bmt.png" />
+  <link rel="apple-touch-icon" href="assets/favicon-bmt.png" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── CONTATO — PAGE SPECIFIC ── */
+
+    /* Hero compacto — sem imagem de fundo, só navy */
+    .ct-hero-plain {
+      background: var(--navy);
+      padding: 120px 0 72px;
+      border-bottom: 3px solid var(--orange);
+    }
+    .ct-hero-plain .breadcrumb a,
+    .ct-hero-plain .breadcrumb span { color: rgba(255,255,255,0.50); }
+    .ct-hero-plain .breadcrumb span[aria-current] { color: rgba(255,255,255,0.80); }
+    .ct-hero-plain .breadcrumb__sep { color: rgba(255,255,255,0.25); }
+
+    .ct-hero-plain h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.0;
+      margin: 20px 0 20px;
+    }
+    .ct-hero-plain h1 em {
+      color: var(--orange-light);
+      font-style: normal;
+    }
+    .ct-hero-plain p {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.72);
+      max-width: 620px;
+    }
+
+    /* Main layout: form left, sidebar right */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ── FORM ── */
+    .contact-form-wrap {}
+
+    .contact-form-intro {
+      margin-bottom: 40px;
+    }
+    .contact-form-intro p {
+      font-family: var(--font-serif);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+    .contact-form-intro p:last-of-type { margin-bottom: 0; }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group--full { grid-column: 1 / -1; }
+
+    .form-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--text-body);
+    }
+    .form-label span {
+      color: var(--orange);
+      margin-left: 2px;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-body);
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 0;
+      padding: 13px 16px;
+      width: 100%;
+      appearance: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      line-height: 1.5;
+    }
+    .form-input::placeholder,
+    .form-textarea::placeholder { color: #b0b0b0; }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(232,132,10,0.12);
+    }
+
+    .form-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23444'%3E%3Cpath d='M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 16px;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+    .form-select option[value=""] { color: #b0b0b0; }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .form-hint {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      color: var(--mid-gray);
+      line-height: 1.5;
+      margin-top: 2px;
+    }
+
+    /* Submit */
+    .form-submit {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-top: 8px;
+    }
+    .form-submit-note {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--mid-gray);
+      line-height: 1.5;
+      max-width: 320px;
+    }
+    .form-submit-note em {
+      font-style: italic;
+      color: var(--text-light);
+    }
+
+    /* Success state */
+    .form-success {
+      display: none;
+      background: var(--off-white);
+      border-left: 4px solid var(--orange);
+      padding: 40px 36px;
+      text-align: left;
+    }
+    .form-success.visible { display: block; }
+    .form-success__icon {
+      width: 40px;
+      height: 40px;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+    .form-success h3 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .form-success p {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-light);
+    }
+
+    /* ── SIDEBAR ── */
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      position: sticky;
+      top: 96px;
+    }
+
+    .sidebar-block {
+      background: var(--off-white);
+      padding: 32px 28px;
+      border-top: 3px solid var(--orange);
+    }
+    .sidebar-block--dark {
+      background: var(--navy);
+      border-top-color: var(--orange);
+    }
+
+    .sidebar-block__label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 16px;
+    }
+    .sidebar-block--dark .sidebar-block__label { color: rgba(255,255,255,0.35); }
+
+    .sidebar-block__title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 12px;
+      letter-spacing: 0.01em;
+    }
+    .sidebar-block--dark .sidebar-block__title { color: #fff; }
+
+    .sidebar-block p {
+      font-family: var(--font-serif);
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 0;
+    }
+    .sidebar-block--dark p { color: rgba(255,255,255,0.70); }
+
+    .sidebar-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .sidebar-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--text-light);
+    }
+    .sidebar-block--dark .sidebar-step { color: rgba(255,255,255,0.70); }
+    .sidebar-step__num {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 1px;
+    }
+
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--navy);
+      padding: 10px 14px;
+      background: #fff;
+      border-left: 2px solid var(--border);
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .sidebar-link:hover { border-left-color: var(--orange); color: var(--orange); }
+    .sidebar-link svg { width: 14px; height: 14px; flex-shrink: 0; opacity: 0.5; }
+
+    @media (max-width: 1024px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 56px; }
+      .contact-sidebar { position: static; }
+    }
+    @media (max-width: 768px) {
+      .ct-hero-plain { padding: 96px 0 56px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-submit { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+
+  <!-- NAVIGATION -->
+  <header role="banner">
+    <nav id="site-nav" aria-label="Navegação principal">
+      <div class="nav-inner">
+
+        <a href="index.html" class="nav-logo" aria-label="BMT-Interbiz — Página inicial">
+          <img src="assets/logo_bmt.png" alt="BMT-Interbiz" width="120" height="40" />
+        </a>
+
+        <ul class="nav-menu" role="list">
+          <li><a href="index.html">Início</a>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="como-trabalhamos.html">Como Trabalhamos</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="industrias.html">Indústrias</a></li>
+          <li><a href="contato.html" class="nav-cta" aria-current="page">Fale Conosco</a></li>
+        </ul>
+
+        <div class="nav-lang" role="navigation" aria-label="Seleção de idioma">
+          <a href="/contato.html" class="nav-lang__item nav-lang__item--active" aria-current="true" aria-label="Português (idioma atual)" hreflang="pt-BR">PT</a>
+          <span class="nav-lang__sep" aria-hidden="true"></span>
+          <a href="/en/contact.html" class="nav-lang__item" aria-label="English" hreflang="en">EN</a>
+          <span class="nav-lang__sep" aria-hidden="true"></span>
+          <a href="/es/contacto.html" class="nav-lang__item" aria-label="Español" hreflang="es">ES</a>
+        </div>
+
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+
+      </div>
+
+      <nav id="mobile-menu" class="nav-mobile" aria-label="Menu móvel" aria-hidden="true">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre a BMT</a>
+        <a href="como-trabalhamos.html">Como Trabalhamos</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="industrias.html">Indústrias</a>
+        <a href="contato.html" aria-current="page">Fale Conosco</a>
+        <div class="nav-mobile__lang" role="navigation" aria-label="Seleção de idioma">
+          <a href="/contato.html" class="active" aria-label="Português (idioma atual)" hreflang="pt-BR">PT</a>
+          <span class="nav-mobile__lang-sep" aria-hidden="true"></span>
+          <a href="/en/contact.html" aria-label="English" hreflang="en">EN</a>
+          <span class="nav-mobile__lang-sep" aria-hidden="true"></span>
+          <a href="/es/contacto.html" aria-label="Español" hreflang="es">ES</a>
+        </div>
+      </nav>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO COMPACTO -->
+    <section class="ct-hero-plain" aria-label="Inicie uma conversa">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Navegação estrutural">
+          <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre a BMT</a>
+          <span class="breadcrumb__sep" aria-hidden="true">›</span>
+          <span aria-current="page">Contato</span>
+        </nav>
+        <h1>Inicie uma <em>Conversa</em></h1>
+        <p>
+          Operações internacionais geralmente começam com a necessidade de avaliar alternativas, aumentar a confiabilidade da execução ou estruturar novos arranjos de fornecimento.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section class="section" id="formulario" aria-labelledby="form-heading">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- FORMULÁRIO -->
+          <div class="contact-form-wrap fade-up">
+
+            <div class="contact-form-intro">
+              <p class="section-label">Formulário de Contato</p>
+              <h2 class="section-heading" id="form-heading">
+                Fale com a BMT sobre sua operação
+              </h2>
+              <span class="section-divider" aria-hidden="true"></span>
+              <p>Converse com a BMT sobre sua próxima operação de importação ou exportação e avalie como a execução estruturada e o alinhamento operacional podem apoiar resultados mais confiáveis no comércio internacional.</p>
+              <p style="margin-top: 12px;">As tratativas iniciais têm foco em compreender requisitos operacionais e avaliar como a execução pode ser estruturada antes da implementação.</p>
+            </div>
+
+            <!-- SUCCESS STATE -->
+            <div class="form-success" id="form-success" role="alert" aria-live="polite">
+              <svg class="form-success__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="20" cy="20" r="19" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 20.5L17 25.5L28 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <h3>Mensagem recebida</h3>
+              <p>Obrigado pelo contato. A BMT responderá em breve para dar continuidade à conversa sobre sua operação.</p>
+            </div>
+
+            <!-- FORM -->
+            <form class="contact-form" id="contact-form" novalidate aria-label="Formulário de contato BMT-Interbiz">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="nome">Nome <span aria-hidden="true">*</span></label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Seu nome"
+                    autocomplete="given-name"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="empresa">Empresa <span aria-hidden="true">*</span></label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="empresa"
+                    name="empresa"
+                    placeholder="Nome da empresa"
+                    autocomplete="organization"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="email">E-mail <span aria-hidden="true">*</span></label>
+                  <input
+                    class="form-input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="seu@email.com"
+                    autocomplete="email"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="telefone">Telefone</label>
+                  <input
+                    class="form-input"
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                    placeholder="+55 (00) 00000-0000"
+                    autocomplete="tel"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="tipo-operacao">Tipo de Operação <span aria-hidden="true">*</span></label>
+                <select class="form-select" id="tipo-operacao" name="tipo-operacao" required aria-required="true">
+                  <option value="" disabled selected>Selecione o tipo de operação</option>
+                  <option value="importacao">Importação</option>
+                  <option value="exportacao">Exportação</option>
+                  <option value="importacao-exportacao">Importação e Exportação</option>
+                  <option value="trade-management">Trade Management</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="setor">Setor / Indústria</label>
+                <select class="form-select" id="setor" name="setor">
+                  <option value="" disabled selected>Selecione o setor (opcional)</option>
+                  <option value="componentes-industriais">Componentes e Consumíveis Industriais</option>
+                  <option value="materiais-construcao">Materiais de Construção</option>
+                  <option value="insumos-agro-quimicos">Insumos Agro e Químicos</option>
+                  <option value="produtos-madeira">Produtos de Madeira</option>
+                  <option value="outro">Outro setor</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="mensagem">Mensagem <span aria-hidden="true">*</span></label>
+                <textarea
+                  class="form-textarea"
+                  id="mensagem"
+                  name="mensagem"
+                  placeholder="Descreva brevemente sua operação ou o que deseja avaliar com a BMT."
+                  required
+                  aria-required="true"
+                ></textarea>
+                <p class="form-hint">Execução estruturada começa com um entendimento claro de requisitos. Quanto mais contexto você compartilhar, mais objetiva será a conversa inicial.</p>
+              </div>
+
+              <div class="form-submit">
+                <p class="form-submit-note">
+                  <em>As tratativas iniciais têm foco em compreender requisitos operacionais e avaliar como a execução pode ser estruturada antes da implementação.</em>
+                </p>
+                <button type="submit" class="btn btn--primary" style="font-size: 1rem; padding: 16px 36px;">
+                  Enviar Mensagem
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+                </button>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- SIDEBAR -->
+          <aside class="contact-sidebar fade-up fade-up--delay-2" aria-label="Informações de contato">
+
+            <!-- Como funciona a conversa inicial -->
+            <div class="sidebar-block sidebar-block--dark">
+              <p class="sidebar-block__label">Como funciona</p>
+              <p class="sidebar-block__title">A conversa inicial</p>
+              <div class="sidebar-steps">
+                <div class="sidebar-step">
+                  <span class="sidebar-step__num" aria-hidden="true">1</span>
+                  <span>Você envia uma mensagem descrevendo sua operação ou necessidade.</span>
+                </div>
+                <div class="sidebar-step">
+                  <span class="sidebar-step__num" aria-hidden="true">2</span>
+                  <span>A BMT avalia o contexto e responde para alinhar os próximos passos.</span>
+                </div>
+                <div class="sidebar-step">
+                  <span class="sidebar-step__num" aria-hidden="true">3</span>
+                  <span>As tratativas focam em compreender os requisitos antes de qualquer proposta.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Nota operacional -->
+            <div class="sidebar-block">
+              <p class="sidebar-block__label">Nota operacional</p>
+              <p class="sidebar-block__title">Execução começa pelo entendimento</p>
+              <p>Execução estruturada começa com um entendimento claro de requisitos. Por isso, a conversa inicial não tem como objetivo apresentar uma proposta imediata, mas compreender a operação e avaliar como a execução pode ser estruturada.</p>
+            </div>
+
+            <!-- Links de navegação -->
+            <div class="sidebar-block">
+              <p class="sidebar-block__label">Saiba mais</p>
+              <nav class="sidebar-links" aria-label="Links relacionados">
+                <a href="como-trabalhamos.html" class="sidebar-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+                  Como Trabalhamos
+                </a>
+                <a href="servicos.html" class="sidebar-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+                  Serviços
+                </a>
+                <a href="industrias.html" class="sidebar-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+                  Indústrias & Experiência
+                </a>
+                <a href="sobre.html" class="sidebar-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+                  Sobre a BMT
+                </a>
+              </nav>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer" role="contentinfo" aria-label="Rodapé do site">
+    <div class="container">
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" aria-label="BMT-Interbiz — Início">
+            <img src="assets/logo_bmt.png" alt="BMT-Interbiz" width="130" height="44" loading="lazy" />
+          </a>
+          <p>Trading company internacional responsável pela execução de operações de importação e exportação por meio do alinhamento estruturado de fornecedores e processos disciplinados.</p>
+        </div>
+
+        <nav class="footer-col" aria-label="Navegação do rodapé — empresa">
+          <h4>Empresa</h4>
+          <ul role="list">
+            <li></li>
+            <li><a href="como-trabalhamos.html">Como Trabalhamos</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="industrias.html">Indústrias</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Navegação do rodapé — serviços">
+          <h4>Serviços</h4>
+          <ul role="list">
+            <li><a href="servicos.html#importacao">Importação</a></li>
+            <li><a href="servicos.html#exportacao">Exportação</a></li>
+            <li><a href="servicos.html#trade-management">Trade Management</a></li>
+            <li><a href="servicos.html#coordenacao">Coordenação Operacional</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul role="list">
+            <li><a href="contato.html">Fale Conosco</a></li>
+          </ul>
+          <div style="margin-top:20px;">
+            <p style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.28); margin-bottom:10px;">Idiomas</p>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <a href="/contato.html" aria-label="Português (atual)" style="font-size:0.78rem; color:var(--orange-light);">PT</a>
+              <span style="color:rgba(255,255,255,0.2);">|</span>
+              <a href="/en/contact.html" aria-label="English" style="font-size:0.78rem;">EN</a>
+              <span style="color:rgba(255,255,255,0.2);">|</span>
+              <a href="/es/contacto.html" aria-label="Español" style="font-size:0.78rem;">ES</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2025</span> BMT-Interbiz. Todos os direitos reservados.</p>
+        <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center;">
+          <a href="politica-privacidade.html">Política de Privacidade</a>
+          <a href="termos-de-uso.html">Termos de Uso</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    const toggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      mobileMenu.setAttribute('aria-hidden', !isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    // Fade-up
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+    }
+
+    // Form validation + success state
+    const form = document.getElementById('contact-form');
+    const successBox = document.getElementById('form-success');
+
+    // Inline validation on blur
+    form.querySelectorAll('[required]').forEach(field => {
+      field.addEventListener('blur', () => validateField(field));
+      field.addEventListener('input', () => {
+        if (field.classList.contains('error')) validateField(field);
+      });
+    });
+
+    function validateField(field) {
+      const isValid = field.checkValidity();
+      field.classList.toggle('error', !isValid);
+      field.setAttribute('aria-invalid', !isValid);
+      let errEl = field.parentElement.querySelector('.field-error');
+      if (!isValid) {
+        if (!errEl) {
+          errEl = document.createElement('p');
+          errEl.className = 'field-error';
+          errEl.setAttribute('role', 'alert');
+          errEl.style.cssText = 'font-family:var(--font-body);font-size:0.75rem;color:#c0392b;margin-top:4px;';
+          field.parentElement.appendChild(errEl);
+        }
+        if (field.validity.valueMissing) errEl.textContent = 'Este campo é obrigatório.';
+        else if (field.validity.typeMismatch) errEl.textContent = 'Por favor insira um e-mail válido.';
+        else errEl.textContent = 'Valor inválido.';
+      } else {
+        if (errEl) errEl.remove();
+      }
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+      form.querySelectorAll('[required]').forEach(field => {
+        validateField(field);
+        if (!field.checkValidity()) valid = false;
+      });
+      if (!valid) {
+        form.querySelector('.error')?.focus();
+        return;
+      }
+      // Show success — in production, replace with actual form submission (fetch/POST)
+      form.style.display = 'none';
+      successBox.classList.add('visible');
+      successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    // Error styling
+    const style = document.createElement('style');
+    style.textContent = `
+      .form-input.error,
+      .form-select.error,
+      .form-textarea.error {
+        border-color: #c0392b;
+        box-shadow: 0 0 0 3px rgba(192,57,43,0.10);
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+
+</body>
+</html>

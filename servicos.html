@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO -->
+  <title>Serviços | BMT-Interbiz</title>
+  <meta name="description" content="A BMT assume responsabilidade pela execução e coordena os elementos necessários para operações de importação e exportação, estruturando o processo em função do resultado operacional." />
+  <meta name="author" content="BMT-Interbiz" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bmt-interbiz.com/servicos.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bmt-interbiz.com/servicos.html" />
+  <meta property="og:title" content="Serviços | BMT-Interbiz" />
+  <meta property="og:description" content="Execução de operações de importação, exportação, trade management e coordenação operacional com responsabilidade e previsibilidade." />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="BMT-Interbiz" />
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="pt-BR" href="https://bmt-interbiz.com/servicos.html" />
+  <link rel="alternate" hreflang="en" href="https://bmt-interbiz.com/en/services.html" />
+  <link rel="alternate" hreflang="es" href="https://bmt-interbiz.com/es/servicios.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon-bmt.png" />
+  <link rel="apple-touch-icon" href="assets/favicon-bmt.png" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Serviços",
+    "url": "https://bmt-interbiz.com/servicos.html",
+    "description": "Serviços de execução de operações de comércio internacional da BMT-Interbiz.",
+    "isPartOf": { "@type": "WebSite", "url": "https://bmt-interbiz.com" }
+  }
+  </script>
+
+  <style>
+    /* ── SERVIÇOS — PAGE SPECIFIC ── */
+
+    .sv-hero .hero__bg {
+      background-image: url('assets/container.jpg');
+    }
+
+    /* Intro */
+    .sv-intro p {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .sv-intro p:last-of-type { margin-bottom: 0; }
+
+    /* Service blocks — alternating layout */
+    .service-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 420px;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-block:last-of-type { border-bottom: none; }
+    .service-block--reverse { direction: rtl; }
+    .service-block--reverse > * { direction: ltr; }
+
+    .service-block__image {
+      overflow: hidden;
+      position: relative;
+      background: var(--navy-mid);
+    }
+    .service-block__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.80) saturate(0.85);
+      transition: transform 0.6s ease;
+    }
+    .service-block:hover .service-block__image img {
+      transform: scale(1.03);
+    }
+    .service-block__image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(13,31,53,0.55) 0%, transparent 60%);
+    }
+    .service-block__image-label {
+      position: absolute;
+      bottom: 24px;
+      left: 28px;
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .service-block__content {
+      padding: 60px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #fff;
+    }
+    .service-block--dark .service-block__content {
+      background: var(--navy);
+    }
+
+    .service-block__num {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+
+    .service-block__title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      line-height: 1.05;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .service-block--dark .service-block__title { color: #fff; }
+
+    .service-block__sub {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 28px;
+    }
+
+    .service-block__text p {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+    .service-block--dark .service-block__text p { color: rgba(255,255,255,0.75); }
+    .service-block__text p:last-of-type { margin-bottom: 0; }
+
+    .service-block__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 32px;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--orange);
+      transition: gap var(--transition);
+    }
+    .service-block__link:hover { gap: 14px; }
+    .service-block__link svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* Closing principle bar */
+    .sv-principle-bar {
+      background: var(--navy-mid);
+      padding: 64px 0;
+      border-top: 3px solid var(--orange);
+    }
+    .sv-principle-bar__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .sv-principle-bar__text p {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 16px;
+    }
+    .sv-principle-bar__text p:last-of-type { margin-bottom: 0; }
+    .sv-principle-bar__quote {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      border-left: 4px solid var(--orange);
+      padding-left: 28px;
+    }
+    .sv-principle-bar__quote em { color: var(--orange-light); font-style: normal; }
+
+    @media (max-width: 1024px) {
+      .service-block { grid-template-columns: 1fr; min-height: auto; }
+      .service-block--reverse { direction: ltr; }
+      .service-block__image { min-height: 280px; }
+      .service-block__content { padding: 48px 40px; }
+      .sv-principle-bar__inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .service-block__content { padding: 40px 24px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+
+  <!-- NAVIGATION -->
+  <header role="banner">
+    <nav id="site-nav" aria-label="Navegação principal">
+      <div class="nav-inner">
+
+        <a href="index.html" class="nav-logo" aria-label="BMT-Interbiz — Página inicial">
+          <img src="assets/logo_bmt.png" alt="BMT-Interbiz" width="120" height="40" />
+        </a>
+
+        <ul class="nav-menu" role="list">
+          <li><a href="index.html">Início</a>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="como-trabalhamos.html">Como Trabalhamos</a></li>
+          <li><a href="servicos.html" aria-current="page">Serviços</a></li>
+          <li><a href="industrias.html">Indústrias</a></li>
+          <li><a href="contato.html" class="nav-cta">Fale Conosco</a></li>
+        </ul>
+
+        <div class="nav-lang" role="navigation" aria-label="Seleção de idioma">
+          <a href="/servicos.html" class="nav-lang__item nav-lang__item--active" aria-current="true" aria-label="Português (idioma atual)" hreflang="pt-BR">PT</a>
+          <span class="nav-lang__sep" aria-hidden="true"></span>
+          <a href="/en/services.html" class="nav-lang__item" aria-label="English" hreflang="en">EN</a>
+          <span class="nav-lang__sep" aria-hidden="true"></span>
+          <a href="/es/servicios.html" class="nav-lang__item" aria-label="Español" hreflang="es">ES</a>
+        </div>
+
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+
+      </div>
+
+      <nav id="mobile-menu" class="nav-mobile" aria-label="Menu móvel" aria-hidden="true">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre a BMT</a>
+        <a href="como-trabalhamos.html">Como Trabalhamos</a>
+        <a href="servicos.html" aria-current="page">Serviços</a>
+        <a href="industrias.html">Indústrias</a>
+        <a href="contato.html">Fale Conosco</a>
+        <div class="nav-mobile__lang" role="navigation" aria-label="Seleção de idioma">
+          <a href="/servicos.html" class="active" aria-label="Português (idioma atual)" hreflang="pt-BR">PT</a>
+          <span class="nav-mobile__lang-sep" aria-hidden="true"></span>
+          <a href="/en/services.html" aria-label="English" hreflang="en">EN</a>
+          <span class="nav-mobile__lang-sep" aria-hidden="true"></span>
+          <a href="/es/servicios.html" aria-label="Español" hreflang="es">ES</a>
+        </div>
+      </nav>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="hero hero--inner sv-hero" aria-label="Serviços BMT-Interbiz">
+      <div class="hero__bg" role="img" aria-label="Contêineres e operações de comércio internacional"></div>
+      <div class="hero__overlay"></div>
+      <div class="container">
+        <div class="hero__content">
+          <nav class="breadcrumb" aria-label="Navegação estrutural">
+            <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre a BMT</a>
+            <span class="breadcrumb__sep" aria-hidden="true">›</span>
+            <span aria-current="page">Serviços</span>
+          </nav>
+          <h1 class="hero__title">
+            Execução de Operações<br />
+            de <em>Comércio Internacional</em>
+          </h1>
+          <p class="hero__subtitle">
+            A BMT assume responsabilidade pela execução e coordena os elementos necessários para operações de importação e exportação, estruturando o processo em função do resultado operacional.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRODUÇÃO -->
+    <section class="section section--off" id="introducao" aria-labelledby="intro-heading">
+      <div class="container">
+        <div style="max-width: 820px; margin: 0 auto; text-align: center;">
+          <p class="section-label fade-up" style="justify-content: center;">Abordagem Operacional</p>
+          <h2 class="section-heading fade-up fade-up--delay-1" id="intro-heading">
+            Responsabilidade pela execução,<br />do início ao fim
+          </h2>
+          <span class="section-divider fade-up fade-up--delay-2" style="margin: 24px auto 32px;" aria-hidden="true"></span>
+          <div class="sv-intro fade-up fade-up--delay-3">
+            <p>Operações internacionais exigem coordenação entre dimensões técnicas, comerciais, contratuais e logísticas. Quando esses elementos são geridos de forma fragmentada, o risco operacional aumenta e a execução se torna menos previsível.</p>
+            <p>A BMT assume responsabilidade pela execução e coordena os elementos necessários para operações de importação e exportação, estruturando o processo em função do resultado operacional.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <div id="servicos" aria-label="Serviços da BMT-Interbiz">
+
+      <!-- 01 — IMPORTAÇÃO -->
+      <article class="service-block" id="importacao" aria-labelledby="importacao-heading">
+
+        <div class="service-block__image">
+          <img src="assets/back-side-logistics-manager.jpg"
+               alt="Gestor no pátio de contêineres — operações de importação"
+               loading="lazy" />
+          <div class="service-block__image-overlay"></div>
+          <span class="service-block__image-label">Importação</span>
+        </div>
+
+        <div class="service-block__content fade-up">
+          <p class="service-block__num">Serviço 01</p>
+          <h2 class="service-block__title" id="importacao-heading">Importação</h2>
+          <p class="service-block__sub">Execução de Operações de Importação</p>
+          <div class="service-block__text">
+            <p>A BMT gerencia operações de importação desde o alinhamento do fornecedor até a coordenação da entrega, garantindo que elementos contratuais, documentais e logísticos sejam executados conforme parâmetros acordados.</p>
+          </div>
+          <a href="contato.html" class="service-block__link" aria-label="Iniciar conversa sobre importação">
+            Iniciar uma conversa
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+          </a>
+        </div>
+
+      </article>
+
+      <!-- 02 — EXPORTAÇÃO -->
+      <article class="service-block service-block--reverse service-block--dark" id="exportacao" aria-labelledby="exportacao-heading">
+
+        <div class="service-block__image">
+          <img src="assets/shipping-port-sunset.jpg"
+               alt="Porto ao pôr do sol — operações de exportação"
+               loading="lazy" />
+          <div class="service-block__image-overlay"></div>
+          <span class="service-block__image-label">Exportação</span>
+        </div>
+
+        <div class="service-block__content fade-up">
+          <p class="service-block__num">Serviço 02</p>
+          <h2 class="service-block__title" id="exportacao-heading">Exportação</h2>
+          <p class="service-block__sub">Execução de Operações de Exportação</p>
+          <div class="service-block__text">
+            <p>A BMT gerencia operações de exportação para empresas que buscam execução estruturada em mercados internacionais, alinhando requisitos do produto, termos comerciais e arranjos logísticos antes do embarque.</p>
+          </div>
+          <a href="contato.html" class="service-block__link" aria-label="Iniciar conversa sobre exportação">
+            Iniciar uma conversa
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+          </a>
+        </div>
+
+      </article>
+
+      <!-- 03 — TRADE MANAGEMENT -->
+      <article class="service-block" id="trade-management" aria-labelledby="trade-heading">
+
+        <div class="service-block__image">
+          <img src="assets/aerial-view-cargo-ship.jpg"
+               alt="Vista aérea de navio cargueiro — trade management"
+               loading="lazy" />
+          <div class="service-block__image-overlay"></div>
+          <span class="service-block__image-label">Trade Management</span>
+        </div>
+
+        <div class="service-block__content fade-up">
+          <p class="service-block__num">Serviço 03</p>
+          <h2 class="service-block__title" id="trade-heading">Trade Management</h2>
+          <p class="service-block__sub">Gestão Comercial e Operacional</p>
+          <div class="service-block__text">
+            <p>A BMT coordena os elementos comerciais e operacionais necessários para a execução, incluindo alinhamento contratual, planejamento operacional e comunicação entre as partes envolvidas.</p>
+          </div>
+          <a href="contato.html" class="service-block__link" aria-label="Iniciar conversa sobre trade management">
+            Iniciar uma conversa
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+          </a>
+        </div>
+
+      </article>
+
+      <!-- 04 — COORDENAÇÃO OPERACIONAL -->
+      <article class="service-block service-block--reverse service-block--dark" id="coordenacao" aria-labelledby="coordenacao-heading">
+
+        <div class="service-block__image">
+          <img src="assets/aerial-view-cargo.jpg"
+               alt="Vista aérea de porto — coordenação operacional"
+               loading="lazy" />
+          <div class="service-block__image-overlay"></div>
+          <span class="service-block__image-label">Coordenação Operacional</span>
+        </div>
+
+        <div class="service-block__content fade-up">
+          <p class="service-block__num">Serviço 04</p>
+          <h2 class="service-block__title" id="coordenacao-heading">Coordenação Operacional</h2>
+          <p class="service-block__sub">Gestão de Stakeholders e Execução</p>
+          <div class="service-block__text">
+            <p>A BMT coordena as interações entre fornecedores, operadores logísticos e demais stakeholders operacionais, assegurando continuidade e consistência durante a execução.</p>
+          </div>
+          <a href="contato.html" class="service-block__link" aria-label="Iniciar conversa sobre coordenação operacional">
+            Iniciar uma conversa
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+          </a>
+        </div>
+
+      </article>
+
+    </div>
+
+    <!-- PRINCÍPIO DE FECHAMENTO -->
+    <section class="sv-principle-bar" id="fechamento" aria-labelledby="fechamento-heading">
+      <div class="container">
+        <div class="sv-principle-bar__inner">
+
+          <div class="fade-up">
+            <p class="section-label">Fundamento dos Serviços</p>
+            <h2 class="section-heading" id="fechamento-heading">
+              Construídos em torno da responsabilidade pela execução
+            </h2>
+            <div class="sv-principle-bar__text">
+              <p>Os serviços da BMT são construídos em torno da responsabilidade pela execução. Ao estruturar a operação antes do início da execução e coordenar os elementos operacionais ao longo do processo, a BMT viabiliza operações internacionais com maior previsibilidade e menor exposição operacional.</p>
+            </div>
+          </div>
+
+          <blockquote class="sv-principle-bar__quote fade-up fade-up--delay-2">
+            O preço correto, para o produto correto, do fornecedor correto —
+            <em>executado corretamente.</em>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-section__inner">
+          <div class="fade-up">
+            <h2 class="cta-section__title" id="cta-heading">
+              Converse com a BMT sobre sua próxima operação de importação ou exportação.
+            </h2>
+            <p>
+              As tratativas iniciais têm foco em compreender requisitos operacionais e avaliar como a execução pode ser estruturada antes da implementação.
+            </p>
+          </div>
+          <div class="fade-up fade-up--delay-2" style="flex-shrink:0;">
+            <a href="contato.html" class="btn btn--primary" style="font-size:1rem; padding:16px 36px;">
+              Iniciar uma Conversa
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer" role="contentinfo" aria-label="Rodapé do site">
+    <div class="container">
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" aria-label="BMT-Interbiz — Início">
+            <img src="assets/logo_bmt.png" alt="BMT-Interbiz" width="130" height="44" loading="lazy" />
+          </a>
+          <p>Trading company internacional responsável pela execução de operações de importação e exportação por meio do alinhamento estruturado de fornecedores e processos disciplinados.</p>
+        </div>
+
+        <nav class="footer-col" aria-label="Navegação do rodapé — empresa">
+          <h4>Empresa</h4>
+          <ul role="list">
+            <li></li>
+            <li><a href="como-trabalhamos.html">Como Trabalhamos</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="industrias.html">Indústrias</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Navegação do rodapé — serviços">
+          <h4>Serviços</h4>
+          <ul role="list">
+            <li><a href="servicos.html#importacao">Importação</a></li>
+            <li><a href="servicos.html#exportacao">Exportação</a></li>
+            <li><a href="servicos.html#trade-management">Trade Management</a></li>
+            <li><a href="servicos.html#coordenacao">Coordenação Operacional</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul role="list">
+            <li><a href="contato.html">Fale Conosco</a></li>
+          </ul>
+          <div style="margin-top:20px;">
+            <p style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.28); margin-bottom:10px;">Idiomas</p>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <a href="/servicos.html" aria-label="Português (atual)" style="font-size:0.78rem; color:var(--orange-light);">PT</a>
+              <span style="color:rgba(255,255,255,0.2);">|</span>
+              <a href="/en/services.html" aria-label="English" style="font-size:0.78rem;">EN</a>
+              <span style="color:rgba(255,255,255,0.2);">|</span>
+              <a href="/es/servicios.html" aria-label="Español" style="font-size:0.78rem;">ES</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2025</span> BMT-Interbiz. Todos os direitos reservados.</p>
+        <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center;">
+          <a href="politica-privacidade.html">Política de Privacidade</a>
+          <a href="termos-de-uso.html">Termos de Uso</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    const toggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      mobileMenu.setAttribute('aria-hidden', !isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+    }
+  </script>
+
+</body>
+</html>
