@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>How We Work | BMT-Interbiz</title>
+  <meta name="description" content="BMT-Interbiz manages international operations through a structured execution process that aligns technical, commercial, and operational aspects before supplier engagement." />
+  <meta name="author" content="BMT-Interbiz" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bmt-interbiz.com/en/how-we-work/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bmt-interbiz.com/en/how-we-work/" />
+  <meta property="og:title" content="How We Work | BMT-Interbiz" />
+  <meta property="og:description" content="Structured execution process aligning technical, commercial, and operational aspects before supplier engagement." />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="BMT-Interbiz" />
+
+  <link rel="alternate" hreflang="pt-BR" href="https://bmt-interbiz.com/como-trabalhamos.html" />
+  <link rel="alternate" hreflang="en"    href="https://bmt-interbiz.com/en/how-we-work/" />
+  <link rel="alternate" hreflang="es"    href="https://bmt-interbiz.com/es/como-trabajamos.html" />
+
+  <link rel="icon" type="image/png" href="assets/favicon-bmt.png" />
+  <link rel="apple-touch-icon" href="assets/favicon-bmt.png" />
+  <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    .ct-hero .hero__bg { background-image: url('assets/aerial-view-cargo.jpg'); }
+
+    .ct-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .ct-intro__text p { font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.85; margin-bottom: 20px; }
+    .ct-intro__text p:last-of-type { margin-bottom: 0; }
+    .ct-intro__highlight { background: var(--navy); padding: 40px 36px; border-left: 4px solid var(--orange); align-self: start; }
+    .ct-intro__highlight p { font-family: var(--font-serif); font-size: 1rem; line-height: 1.85; color: rgba(255,255,255,0.78); margin-bottom: 16px; }
+    .ct-intro__highlight p:last-of-type { margin-bottom: 0; }
+    .ct-intro__highlight-label { font-family: var(--font-body); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; }
+
+    .step-block { display: grid; grid-template-columns: 80px 1fr; gap: 0 48px; padding: 56px 0; border-bottom: 1px solid var(--border); align-items: start; }
+    .step-block:last-of-type { border-bottom: none; }
+    .step-block__num { font-family: var(--font-heading); font-size: 4.5rem; font-weight: 800; color: var(--orange); opacity: 0.20; line-height: 1; padding-top: 6px; flex-shrink: 0; }
+    .step-block__title { font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; letter-spacing: 0.01em; text-transform: uppercase; color: var(--navy); margin-bottom: 8px; line-height: 1.1; }
+    .step-block__subtitle { font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 24px; }
+    .step-block__text p { font-family: var(--font-serif); font-size: 1.02rem; line-height: 1.85; color: var(--text-light); margin-bottom: 16px; }
+    .step-block__text p:last-of-type { margin-bottom: 0; }
+    .step-block__tag { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding: 10px 18px; background: var(--off-white); border-left: 3px solid var(--orange); font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; color: var(--text-light); line-height: 1.5; }
+    .step-block__tag strong { color: var(--navy); font-weight: 600; }
+
+    .ct-closing { background: var(--off-white); border-top: 3px solid var(--orange); padding: 72px 0; }
+    .ct-closing__inner { max-width: 760px; }
+    .ct-closing__text { font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.9; color: var(--text-light); margin-bottom: 40px; }
+
+    .step-progress { display: flex; align-items: center; gap: 0; margin-bottom: 72px; overflow-x: auto; padding-bottom: 4px; }
+    .step-progress__item { display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 80px; }
+    .step-progress__dot { width: 36px; height: 36px; border-radius: 50%; background: var(--off-white); border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--mid-gray); position: relative; z-index: 1; }
+    .step-progress__item--active .step-progress__dot { background: var(--orange); border-color: var(--orange); color: #fff; }
+    .step-progress__line { flex: 1; height: 2px; background: var(--border); margin-top: -18px; }
+    .step-progress__label { font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--mid-gray); margin-top: 10px; text-align: center; max-width: 80px; line-height: 1.4; }
+    .step-progress__item--active .step-progress__label { color: var(--orange); }
+
+    @media (max-width: 768px) {
+      .ct-intro { grid-template-columns: 1fr; gap: 36px; }
+      .step-block { grid-template-columns: 56px 1fr; gap: 0 24px; }
+      .step-block__num { font-size: 3rem; }
+      .step-progress__label { display: none; }
+    }
+    @media (max-width: 480px) { .step-block { grid-template-columns: 1fr; } .step-block__num { font-size: 2.5rem; margin-bottom: 8px; } }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header role="banner">
+    <nav id="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a href="/en/" class="nav-logo" aria-label="BMT-Interbiz — Home">
+          <img src="/assets/logo_bmt.png" alt="BMT-Interbiz" width="120" height="40" />
+        </a>
+        <ul class="nav-menu" role="list">
+          <li><a href="/en/">Home</a></li>
+          <li><a href="/en/about/">About</a></li>
+          <li><a href="/en/how-we-work/" aria-current="page">How We Work</a></li>
+          <li><a href="/en/services/">Services</a></li>
+          <li><a href="/en/industries/">Industries</a></li>
+          <li><a href="/en/contact/" class="nav-cta">Get in Touch</a></li>
+        </ul>
+        <div class="nav-lang" role="navigation" aria-label="Language selection">
+          <a href="/como-trabalhamos.html" class="nav-lang__item" hreflang="pt-BR">PT</a>
+          <span class="nav-lang__sep" aria-hidden="true"></span>
+          <a href="/en/how-we-work/" class="nav-lang__item nav-lang__item--active" aria-current="true" hreflang="en">EN</a>
+          <span class="nav-lang__sep" aria-hidden="true"></span>
+          <a href="/es/como-trabajamos.html" class="nav-lang__item" hreflang="es">ES</a>
+        </div>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav id="mobile-menu" class="nav-mobile" aria-label="Mobile menu" aria-hidden="true">
+        <a href="/en/">Home</a>
+        <a href="/en/about/">About BMT</a>
+        <a href="/en/how-we-work/" aria-current="page">How We Work</a>
+        <a href="/en/services/">Services</a>
+        <a href="/en/industries/">Industries</a>
+        <a href="/en/contact/">Get in Touch</a>
+        <div class="nav-mobile__lang" role="navigation" aria-label="Language selection">
+          <a href="/como-trabalhamos.html" hreflang="pt-BR">PT</a>
+          <span class="nav-mobile__lang-sep" aria-hidden="true"></span>
+          <a href="/en/how-we-work/" class="active" hreflang="en">EN</a>
+          <span class="nav-mobile__lang-sep" aria-hidden="true"></span>
+          <a href="/es/como-trabajamos.html" hreflang="es">ES</a>
+        </div>
+      </nav>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero hero--inner ct-hero" aria-label="How We Work">
+      <div class="hero__bg" role="img" aria-label="Truck on logistics infrastructure bridge"></div>
+      <div class="hero__overlay"></div>
+      <div class="container">
+        <div class="hero__content">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/en/">Home</a>
+            <a href="/en/about/">About BMT</a>
+            <span class="breadcrumb__sep" aria-hidden="true">›</span>
+            <span aria-current="page">How We Work</span>
+          </nav>
+          <h1 class="hero__title">How We <em>Work</em></h1>
+          <p class="hero__subtitle">A structured execution process that aligns technical, commercial, and operational aspects before supplier engagement.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="introduction" aria-labelledby="intro-heading">
+      <div class="container">
+        <div class="ct-intro">
+          <div class="ct-intro__text fade-up">
+            <p class="section-label">Operational Methodology</p>
+            <h2 class="section-heading" id="intro-heading">Structure before execution</h2>
+            <span class="section-divider" aria-hidden="true"></span>
+            <p>International trade operations involve multiple variables that must be aligned before execution begins. Differences in supplier capability, specification interpretation, quality expectations, and operational requirements can create risk when not addressed in the early stages of a project.</p>
+            <p>BMT manages international operations through a structured execution process that aligns technical, commercial, and operational aspects before supplier engagement. This approach reduces uncertainty and promotes consistent, predictable results.</p>
+          </div>
+          <div class="ct-intro__highlight fade-up fade-up--delay-2">
+            <p class="ct-intro__highlight-label">Core principle</p>
+            <p>Technical and quality alignment is completed before supplier engagement, ensuring supplier evaluation and selection are based on fully defined and documented requirements.</p>
+            <p>By structuring the operation before execution begins, BMT reduces uncertainty and allows international trade projects to be carried out with consistency and reliability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section--dark" style="padding: 48px 0;" aria-hidden="true">
+      <div class="container">
+        <div class="step-progress">
+          <div class="step-progress__item step-progress__item--active"><div class="step-progress__dot">01</div><span class="step-progress__label">Requirements Definition</span></div>
+          <div class="step-progress__line"></div>
+          <div class="step-progress__item step-progress__item--active"><div class="step-progress__dot">02</div><span class="step-progress__label">Technical Alignment</span></div>
+          <div class="step-progress__line"></div>
+          <div class="step-progress__item step-progress__item--active"><div class="step-progress__dot">03</div><span class="step-progress__label">Supplier Identification</span></div>
+          <div class="step-progress__line"></div>
+          <div class="step-progress__item step-progress__item--active"><div class="step-progress__dot">04</div><span class="step-progress__label">Execution Preparation</span></div>
+          <div class="step-progress__line"></div>
+          <div class="step-progress__item step-progress__item--active"><div class="step-progress__dot">05</div><span class="step-progress__label">Execution & Delivery</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="process" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="text-center mb-48 fade-up">
+          <p class="section-label" style="justify-content:center;">The Process</p>
+          <h2 class="section-heading" id="process-heading">Five steps of structured execution</h2>
+          <p class="section-subheading" style="margin: 0 auto;">Each step is sequential and interdependent. Each phase begins only after the documented completion of the previous one.</p>
+        </div>
+        <ol aria-label="Detailed BMT-Interbiz process steps">
+
+          <li class="step-block fade-up">
+            <span class="step-block__num" aria-hidden="true">01</span>
+            <div class="step-block__body">
+              <p class="step-block__subtitle">First step</p>
+              <h3 class="step-block__title">Requirements Definition</h3>
+              <div class="step-block__text">
+                <p>Every project begins with a clear understanding of the client's commercial and operational objectives. Product requirements, supply expectations, logistics considerations, and operational constraints are defined before supplier identification begins.</p>
+              </div>
+              <div class="step-block__tag"><strong>Outcome of this step:</strong> Operational and commercial requirements documented and validated before any sourcing action.</div>
+            </div>
+          </li>
+
+          <li class="step-block fade-up fade-up--delay-1">
+            <span class="step-block__num" aria-hidden="true">02</span>
+            <div class="step-block__body">
+              <p class="step-block__subtitle">Second step</p>
+              <h3 class="step-block__title">Technical & Quality Alignment</h3>
+              <div class="step-block__text">
+                <p>Technical and quality requirements are aligned before sourcing begins. This step ensures that specifications, tolerances, required documentation, and quality expectations are clearly defined and approved.</p>
+                <p>Technical and quality alignment is completed before supplier engagement, ensuring that supplier evaluation and selection are based on fully defined and documented requirements.</p>
+              </div>
+              <div class="step-block__tag"><strong>Outcome of this step:</strong> Technical specifications and quality criteria defined, documented, and approved before sourcing begins.</div>
+            </div>
+          </li>
+
+          <li class="step-block fade-up fade-up--delay-2">
+            <span class="step-block__num" aria-hidden="true">03</span>
+            <div class="step-block__body">
+              <p class="step-block__subtitle">Third step</p>
+              <h3 class="step-block__title">Supplier Identification & Validation</h3>
+              <div class="step-block__text">
+                <p>Supplier identification begins only after technical and operational requirements have been established. Potential suppliers are evaluated based on their ability to meet defined specifications, operational reliability, and commercial conditions compatible with the operation.</p>
+              </div>
+              <div class="step-block__tag"><strong>Outcome of this step:</strong> Qualified and validated suppliers based on previously defined requirements — not the other way around.</div>
+            </div>
+          </li>
+
+          <li class="step-block fade-up fade-up--delay-3">
+            <span class="step-block__num" aria-hidden="true">04</span>
+            <div class="step-block__body">
+              <p class="step-block__subtitle">Fourth step</p>
+              <h3 class="step-block__title">Execution Preparation</h3>
+              <div class="step-block__text">
+                <p>Before execution begins, the commercial, contractual, and logistics aspects of the operation are structured and validated. This step includes delivery terms alignment, documentation, operational responsibilities, and coordination between all parties involved.</p>
+              </div>
+              <div class="step-block__tag"><strong>Outcome of this step:</strong> Operation structured, conditions validated, and responsibilities defined before the first shipment.</div>
+            </div>
+          </li>
+
+          <li class="step-block fade-up fade-up--delay-4">
+            <span class="step-block__num" aria-hidden="true">05</span>
+            <div class="step-block__body">
+              <p class="step-block__subtitle">Fifth step</p>
+              <h3 class="step-block__title">Execution & Delivery</h3>
+              <div class="step-block__text">
+                <p>BMT manages the execution of the operation, coordinating the contractual, logistics, and operational elements required for delivery as agreed. Execution follows the parameters defined in previous steps, reducing variability during shipment and delivery.</p>
+              </div>
+              <div class="step-block__tag"><strong>Outcome of this step:</strong> Delivery executed according to defined parameters, with BMT as the single point of operational accountability.</div>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <section class="ct-closing" id="closing" aria-labelledby="closing-heading">
+      <div class="container">
+        <div class="ct-closing__inner fade-up">
+          <p class="section-label">Process Outcome</p>
+          <h2 class="section-heading" id="closing-heading">Consistency through structure, not chance</h2>
+          <span class="section-divider" aria-hidden="true"></span>
+          <p class="ct-closing__text">By structuring the operation before execution begins, BMT reduces uncertainty and allows international trade projects to be carried out with consistency and reliability.</p>
+          <div style="display:flex; gap:16px; flex-wrap:wrap;">
+            <a href="/en/services/" class="btn btn--primary">
+              View Services
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+            </a>
+            <a href="/en/contact/" class="btn btn--outline-dark">
+              Start a Conversation
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-section__inner">
+          <div class="fade-up">
+            <h2 class="cta-section__title" id="cta-heading">Talk to BMT about your next import or export operation.</h2>
+            <p>Initial discussions focus on understanding operational requirements and evaluating how execution can be structured before implementation.</p>
+          </div>
+          <div class="fade-up fade-up--delay-2" style="flex-shrink:0;">
+            <a href="/en/contact/" class="btn btn--primary" style="font-size:1rem; padding:16px 36px;">
+              Start a Conversation
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer" role="contentinfo" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/en/" aria-label="BMT-Interbiz — Home">
+            <img src="/assets/logo_bmt.png" alt="BMT-Interbiz" width="130" height="44" loading="lazy" />
+          </a>
+          <p>International trading company responsible for executing import and export operations through structured supplier alignment and disciplined processes.</p>
+        </div>
+        <nav class="footer-col" aria-label="Footer navigation — company">
+          <h4>Company</h4>
+          <ul role="list">
+            <li><a href="/en/about/">About BMT</a></li>
+            <li><a href="/en/how-we-work/">How We Work</a></li>
+            <li><a href="/en/services/">Services</a></li>
+            <li><a href="/en/industries/">Industries</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Footer navigation — services">
+          <h4>Services</h4>
+          <ul role="list">
+            <li><a href="services-en.html#import">Import</a></li>
+            <li><a href="services-en.html#export">Export</a></li>
+            <li><a href="services-en.html#trade-management">Trade Management</a></li>
+            <li><a href="services-en.html#coordination">Operational Coordination</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul role="list"><li><a href="/en/contact/">Get in Touch</a></li></ul>
+          <div style="margin-top:20px;">
+            <p style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.28); margin-bottom:10px;">Languages</p>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <a href="/como-trabalhamos.html" style="font-size:0.78rem;">PT</a>
+              <span style="color:rgba(255,255,255,0.2);">|</span>
+              <a href="/en/how-we-work/" style="font-size:0.78rem; color:var(--orange-light);">EN</a>
+              <span style="color:rgba(255,255,255,0.2);">|</span>
+              <a href="/es/como-trabajamos.html" style="font-size:0.78rem;">ES</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2025</span> BMT-Interbiz. All rights reserved.</p>
+        <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center;">
+          <a href="/en/privacy-policy/">Privacy Policy</a>
+          <a href="/en/terms-of-use/">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+    const toggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => { const isOpen = mobileMenu.classList.toggle('open'); toggle.setAttribute('aria-expanded', isOpen); mobileMenu.setAttribute('aria-hidden', !isOpen); });
+    mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); mobileMenu.setAttribute('aria-hidden', 'true'); }); });
+    document.addEventListener('click', (e) => { if (!nav.contains(e.target)) { mobileMenu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); mobileMenu.setAttribute('aria-hidden', 'true'); } });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible')); }
+  </script>
+</body>
+</html>
