@@ -155,6 +155,42 @@
       margin-top: 7px;
     }
 
+    /* ── Nota de atendimento personalizado ── */
+    .custom-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 28px;
+      padding: 16px 18px;
+      border-left: 3px solid var(--orange);
+      background: rgba(var(--orange-rgb, 210, 100, 30), 0.05);
+    }
+    .industry-block--dark .custom-note {
+      background: rgba(255,255,255,0.04);
+    }
+    .custom-note__icon {
+      flex-shrink: 0;
+      color: var(--orange);
+      margin-top: 1px;
+    }
+    .custom-note__text {
+      font-family: var(--font-body);
+      font-size: 0.84rem;
+      font-weight: 500;
+      line-height: 1.55;
+      color: var(--text-body);
+    }
+    .industry-block--dark .custom-note__text {
+      color: rgba(255,255,255,0.75);
+    }
+    .custom-note__text strong {
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .industry-block--dark .custom-note__text strong {
+      color: #fff;
+    }
+
     /* ═══════════════════════════════════════
        PRODUCTS — compact list + expand panel
     ═══════════════════════════════════════ */
@@ -177,7 +213,6 @@
       margin-bottom: 10px;
     }
 
-    /* Each product row */
     .product-item {
       border-bottom: 1px solid var(--border);
     }
@@ -191,7 +226,6 @@
       border-top-color: rgba(255,255,255,0.08);
     }
 
-    /* Compact summary row */
     .product-item__summary {
       list-style: none;
       display: flex;
@@ -245,7 +279,6 @@
     .product-item__toggle svg { transition: transform 0.25s ease; }
     .product-item[open] .product-item__toggle svg { transform: rotate(180deg); }
 
-    /* Expanded panel */
     .product-item__panel {
       display: grid;
       grid-template-columns: 220px 1fr;
@@ -459,7 +492,7 @@
           </h2>
           <span class="section-divider" aria-hidden="true"></span>
           <p>A execução de operações internacionais exige compreensão das características operacionais de cada setor. Diferenças em requisitos do produto, expectativas de qualidade, ambientes regulatórios e estruturas de supply chain influenciam a forma como as operações devem ser preparadas e executadas.</p>
-          <p>A experiência operacional em múltiplos setores permite adaptar a metodologia de execução a diferentes ambientes, mantendo disciplina de processo, coordenação e previsibilidade.</p>
+          <p>A BMT não opera com catálogo fixo. Em cada setor, o ponto de partida é a necessidade real do cliente — especificação técnica, volume, prazo e condições de entrega. O sourcing começa apenas depois que esses requisitos estão claramente definidos e alinhados.</p>
         </div>
       </div>
     </section>
@@ -483,6 +516,12 @@
               <p>Operações de importação de componentes e consumíveis industriais envolvem requisitos técnicos precisos, tolerâncias definidas e programas de fornecimento de médio e longo prazo. A variabilidade no fornecimento gera impacto direto na continuidade operacional do cliente.</p>
               <p>A BMT estrutura essas operações com ênfase no alinhamento técnico prévio, na validação de fornecedores com base em capacidade real de atendimento às especificações e na previsibilidade da execução ao longo dos ciclos de fornecimento.</p>
             </div>
+
+            <div class="custom-note" role="note">
+              <svg class="custom-note__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 7v4M8 5.5v.5"/></svg>
+              <p class="custom-note__text"><strong>Atendimento sob especificação.</strong> A BMT busca os produtos que o seu processo exige — especificação técnica, norma, embalagem e volume são definidos com o cliente antes de qualquer sourcing. Os produtos listados abaixo são referências do que já operamos; outras especificações são atendidas mediante consulta.</p>
+            </div>
+
             <ul class="industry-block__factors" aria-label="Fatores operacionais críticos">
               <li class="industry-block__factor">Consistência técnica entre lotes</li>
               <li class="industry-block__factor">Clareza de especificação antes do sourcing</li>
@@ -491,7 +530,7 @@
             </ul>
 
             <div class="products-section fade-up fade-up--delay-2">
-              <p class="products-section__label">Produtos neste setor</p>
+              <p class="products-section__label">Referências de produtos operados</p>
 
               <!-- Arame MIG 0,8 mm -->
               <details class="product-item">
@@ -505,7 +544,7 @@
                 </summary>
                 <div class="product-item__panel">
                   <div class="product-item__img-wrap">
-                    <img src="/assets/tractus_arame_08.jpg" alt="Arame MIG Tractus 0,8mm — bobina 15kg" loading="lazy" onerror="this.style.opacity='0.3'" />
+                    <img src="assets/tractus_arame_08.jpg" alt="Arame MIG Tractus 0,8mm — bobina 15kg" loading="lazy" onerror="this.style.opacity='0.3'" />
                   </div>
                   <div class="product-item__details">
                     <p class="product-item__desc">Arame de soldagem de aço carbono com revestimento de cobre para proteção contra oxidação. Compatível com gases de proteção Ar/CO₂. Indicado para operações que exigem cordão fino, boa fusão e aparência refinada em chapas leves e estruturas de baixa espessura.</p>
@@ -656,6 +695,12 @@
               <p>Operações com materiais de construção demandam atenção simultânea à competitividade comercial, à eficiência logística e à consistência do produto ao longo de programas de fornecimento de médio e longo prazo. Variações na qualidade ou atrasos no fornecimento têm impacto direto em cronogramas e custos de obra.</p>
               <p>A BMT estrutura essas operações priorizando o alinhamento de especificações técnicas e condições de entrega antes do início do sourcing, assegurando que o fornecedor selecionado tenha capacidade real de atendimento às condições acordadas.</p>
             </div>
+
+            <div class="custom-note" role="note">
+              <svg class="custom-note__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 7v4M8 5.5v.5"/></svg>
+              <p class="custom-note__text"><strong>Atendimento sob especificação.</strong> Espessura, largura, acabamento, cor e tipo de núcleo são definidos com o cliente antes do sourcing. A BMT busca o fornecedor adequado para cada projeto — não o contrário.</p>
+            </div>
+
             <ul class="industry-block__factors" aria-label="Fatores operacionais críticos">
               <li class="industry-block__factor">Competitividade de preço sustentada</li>
               <li class="industry-block__factor">Eficiência logística e prazo de entrega</li>
@@ -664,14 +709,14 @@
             </ul>
 
             <div class="products-section fade-up fade-up--delay-2">
-              <p class="products-section__label">Produtos neste setor</p>
+              <p class="products-section__label">Referências de produtos operados</p>
 
               <!-- ACM -->
               <details class="product-item">
                 <summary class="product-item__summary">
                   <span class="product-item__dot" aria-hidden="true"></span>
                   <span class="product-item__name">ACM — Painel Composto de Alumínio</span>
-                  <span class="product-item__pill">3 / 4 / 6 mm &middot; PVDF &middot; Poliéster &middot; FR</span>
+                  <span class="product-item__pill">Espessura e acabamento conforme projeto</span>
                   <span class="product-item__toggle" aria-hidden="true">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
                   </span>
@@ -681,12 +726,12 @@
                     <img src="assets/acm_placas.jpg" alt="ACM — painel composto de alumínio em fachada" loading="lazy" onerror="this.style.opacity='0.3'" />
                   </div>
                   <div class="product-item__details">
-                    <p class="product-item__desc">Painel formado por duas chapas de alumínio com núcleo de polietileno (PE) ou mineral FR. Alta demanda em projetos de arquitetura e construção civil. A importação exige controle rigoroso de uniformidade de cor e acabamento entre lotes — qualquer variação compromete a continuidade visual da fachada.</p>
+                    <p class="product-item__desc">Painel formado por duas chapas de alumínio com núcleo de polietileno (PE) ou mineral FR. A BMT não trabalha com estoque fixo — cada operação é estruturada a partir da especificação do projeto: espessura, largura, cor e acabamento definidos pelo cliente, com controle rigoroso de uniformidade entre lotes para garantir continuidade visual em fachadas e revestimentos.</p>
                     <div class="product-item__specs">
                       <div class="pspec"><span class="pspec__key">Composição</span><span class="pspec__val">Chapa Al + núcleo PE ou mineral FR</span></div>
-                      <div class="pspec"><span class="pspec__key">Espessura total</span><span class="pspec__val">3 mm · 4 mm · 6 mm</span></div>
-                      <div class="pspec"><span class="pspec__key">Largura padrão</span><span class="pspec__val">1.220 mm · 1.500 mm</span></div>
-                      <div class="pspec"><span class="pspec__key">Acabamento</span><span class="pspec__val">PVDF · Poliéster · Anodizado · Espelhado · Brushed</span></div>
+                      <div class="pspec"><span class="pspec__key">Espessura</span><span class="pspec__val">Conforme especificação do cliente</span></div>
+                      <div class="pspec"><span class="pspec__key">Largura</span><span class="pspec__val">Conforme especificação do cliente</span></div>
+                      <div class="pspec"><span class="pspec__key">Acabamento</span><span class="pspec__val">PVDF · Poliéster · Anodizado · Espelhado · Brushed — sob especificação</span></div>
                       <div class="pspec"><span class="pspec__key">Certificação FR</span><span class="pspec__val">Disponível para núcleo mineral</span></div>
                     </div>
                     <div class="product-item__tags">
@@ -727,6 +772,12 @@
               <p>Operações com insumos agro e químicos estão sujeitas a exigências regulatórias específicas, requisitos documentais rigorosos e condições de fornecimento que variam por produto, origem e destino. A ausência de alinhamento prévio gera risco de não-conformidade, atrasos e exposição operacional.</p>
               <p>A BMT estrutura essas operações com ênfase na definição antecipada dos requisitos regulatórios e documentais, no alinhamento de especificações técnicas antes do sourcing e na preparação cuidadosa da execução antes do embarque.</p>
             </div>
+
+            <div class="custom-note" role="note">
+              <svg class="custom-note__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 7v4M8 5.5v.5"/></svg>
+              <p class="custom-note__text"><strong>Atendimento sob especificação.</strong> Cada insumo tem requisitos regulatórios, documentais e técnicos próprios. A BMT mapeia essas exigências junto ao cliente antes de iniciar qualquer operação — produto, origem, documentação e condições de transporte são definidos caso a caso.</p>
+            </div>
+
             <ul class="industry-block__factors" aria-label="Fatores operacionais críticos">
               <li class="industry-block__factor">Conformidade regulatória e documental</li>
               <li class="industry-block__factor">Especificações técnicas precisas</li>
@@ -758,6 +809,12 @@
               <p>Operações com produtos de madeira envolvem características de origem com relevância comercial e regulatória, variações naturais de qualidade e fornecedores com perfis operacionais distintos. A seleção inadequada de fornecedores gera inconsistências que comprometem o resultado da operação.</p>
               <p>A BMT estrutura essas operações com ênfase na validação antecipada das características do produto, na avaliação criteriosa da confiabilidade do fornecedor e no alinhamento de condições de execução antes do embarque.</p>
             </div>
+
+            <div class="custom-note" role="note">
+              <svg class="custom-note__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 7v4M8 5.5v.5"/></svg>
+              <p class="custom-note__text"><strong>Atendimento sob especificação.</strong> Espécie, dimensões, grau de umidade, tratamento e certificação de origem são definidos com o cliente antes do sourcing. A BMT seleciona fornecedores capazes de atender exatamente ao que o projeto exige — não ao que está disponível.</p>
+            </div>
+
             <ul class="industry-block__factors" aria-label="Fatores operacionais críticos">
               <li class="industry-block__factor">Verificação de origem e certificação</li>
               <li class="industry-block__factor">Consistência de qualidade entre lotes</li>
@@ -770,7 +827,7 @@
       </div>
     </article>
 
-    <!-- ═══ SETOR 05 — PNEUS CAMINHÃO E ÔNIBUS (NOVO) ═══ -->
+    <!-- ═══ SETOR 05 — PNEUS CAMINHÃO E ÔNIBUS ═══ -->
     <article class="industry-block" id="pneus-caminhao-onibus" aria-labelledby="ind05-heading">
       <div class="container">
         <div class="industry-block__inner">
@@ -789,6 +846,12 @@
               <p>A importação de pneus para caminhão e ônibus envolve requisitos técnicos rigorosos, obrigações de homologação junto ao INMETRO e expectativas de desempenho em campo que variam por aplicação — rodoviária, urbana, mista ou off-road. A seleção inadequada do fornecedor gera riscos de conformidade e inconsistência ao longo do programa de fornecimento.</p>
               <p>A BMT estrutura essas operações com validação técnica prévia do produto, verificação da capacidade do fabricante para fornecimento recorrente em volume e alinhamento rigoroso das condições documentais e regulatórias antes do embarque.</p>
             </div>
+
+            <div class="custom-note" role="note">
+              <svg class="custom-note__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 7v4M8 5.5v.5"/></svg>
+              <p class="custom-note__text"><strong>Atendimento sob especificação.</strong> Medida, posição, índice de carga, índice de velocidade e padrão de banda de rodagem são definidos conforme o perfil da frota do cliente. As medidas listadas abaixo são referências de operações já realizadas — outras medidas e especificações são atendidas mediante consulta.</p>
+            </div>
+
             <ul class="industry-block__factors" aria-label="Fatores operacionais críticos">
               <li class="industry-block__factor">Homologação INMETRO e conformidade regulatória</li>
               <li class="industry-block__factor">Consistência de desempenho entre lotes</li>
@@ -797,30 +860,30 @@
             </ul>
 
             <div class="products-section fade-up fade-up--delay-2">
-              <p class="products-section__label">Produtos neste setor</p>
+              <p class="products-section__label">Referências de produtos operados</p>
 
               <!-- Pneu Direcional -->
               <details class="product-item">
                 <summary class="product-item__summary">
                   <span class="product-item__dot" aria-hidden="true"></span>
                   <span class="product-item__name">Pneu Direcional — Caminhão</span>
-                  <span class="product-item__pill">295/80 R22.5 &middot; 315/80 R22.5 &middot; Eixo dianteiro</span>
+                  <span class="product-item__pill">Medida conforme frota &middot; Eixo dianteiro</span>
                   <span class="product-item__toggle" aria-hidden="true">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
                   </span>
                 </summary>
                 <div class="product-item__panel">
                   <div class="product-item__img-wrap">
-                    <img src="https://m.media-amazon.com/images/I/71Q2YqChFyL._AC_SL1500_.jpg" alt="Pneu direcional para caminhão 295/80 R22.5" loading="lazy" onerror="this.style.opacity='0.3'" />
+                    <img src="assets/pneu_ironhead.jpg" alt="Pneu direcional para caminhão" loading="lazy" onerror="this.style.opacity='0.3'" />
                   </div>
                   <div class="product-item__details">
-                    <p class="product-item__desc">Desenvolvido para operação em eixo dianteiro em ciclos rodoviários exigentes. Construção radial com lona de aço para resistência estrutural e dissipação de calor. Perfil de banda de rodagem otimizado para estabilidade direcional e vida útil elevada em pavimento.</p>
+                    <p class="product-item__desc">Construção radial com lona de aço para resistência estrutural e dissipação de calor em eixo dianteiro. A medida, o índice de carga e o padrão de banda de rodagem são definidos com o cliente conforme o perfil da operação — as medidas indicadas são referências de operações já realizadas.</p>
                     <div class="product-item__specs">
                       <div class="pspec"><span class="pspec__key">Posição</span><span class="pspec__val">Direcional — eixo dianteiro</span></div>
-                      <div class="pspec"><span class="pspec__key">Medidas</span><span class="pspec__val">295/80 R22.5 · 315/80 R22.5 · 11R22.5</span></div>
+                      <div class="pspec"><span class="pspec__key">Medidas de referência</span><span class="pspec__val">295/80 R22.5 · 315/80 R22.5 · 11R22.5</span></div>
+                      <div class="pspec"><span class="pspec__key">Outras medidas</span><span class="pspec__val">Sob especificação do cliente</span></div>
                       <div class="pspec"><span class="pspec__key">Construção</span><span class="pspec__val">Radial com lona de aço</span></div>
-                      <div class="pspec"><span class="pspec__key">Aplicação</span><span class="pspec__val">Rodovias pavimentadas · Longa distância</span></div>
-                      <div class="pspec"><span class="pspec__key">Homologação</span><span class="pspec__val">INMETRO — disponível sob consulta</span></div>
+                      <div class="pspec"><span class="pspec__key">Homologação</span><span class="pspec__val">INMETRO — homologado</span></div>
                     </div>
                     <div class="product-item__tags">
                       <span class="product-item__tag">Longa distância</span>
@@ -838,23 +901,23 @@
                 <summary class="product-item__summary">
                   <span class="product-item__dot" aria-hidden="true"></span>
                   <span class="product-item__name">Pneu de Tração — Caminhão</span>
-                  <span class="product-item__pill">295/80 R22.5 &middot; 315/80 R22.5 &middot; Eixo motriz</span>
+                  <span class="product-item__pill">Medida conforme frota &middot; Eixo motriz</span>
                   <span class="product-item__toggle" aria-hidden="true">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
                   </span>
                 </summary>
                 <div class="product-item__panel">
                   <div class="product-item__img-wrap">
-                    <img src="https://m.media-amazon.com/images/I/71Q2YqChFyL._AC_SL1500_.jpg" alt="Pneu de tração para caminhão 295/80 R22.5" loading="lazy" onerror="this.style.opacity='0.3'" />
+                    <img src="assets/pneu_ironhead.jpg" alt="Pneu de tração para caminhão" loading="lazy" onerror="this.style.opacity='0.3'" />
                   </div>
                   <div class="product-item__details">
-                    <p class="product-item__desc">Projetado para transmissão de torque eficiente com durabilidade elevada no eixo motriz. Blocos de borracha profundos para tração sob carga plena. Padrão de sulcos resistente ao desgaste irregular, mantendo desempenho uniforme ao longo da vida útil do pneu.</p>
+                    <p class="product-item__desc">Blocos de borracha profundos para transmissão de torque eficiente e durabilidade no eixo motriz. Medida, índice de carga e padrão de sulcos definidos com o cliente conforme o perfil de operação — longa distância, regional ou misto. As medidas indicadas são referências de operações já realizadas.</p>
                     <div class="product-item__specs">
                       <div class="pspec"><span class="pspec__key">Posição</span><span class="pspec__val">Tração — eixo traseiro motriz</span></div>
-                      <div class="pspec"><span class="pspec__key">Medidas</span><span class="pspec__val">295/80 R22.5 · 315/80 R22.5 · 11R22.5</span></div>
+                      <div class="pspec"><span class="pspec__key">Medidas de referência</span><span class="pspec__val">295/80 R22.5 · 315/80 R22.5 · 11R22.5</span></div>
+                      <div class="pspec"><span class="pspec__key">Outras medidas</span><span class="pspec__val">Sob especificação do cliente</span></div>
                       <div class="pspec"><span class="pspec__key">Construção</span><span class="pspec__val">Radial com lona de aço</span></div>
-                      <div class="pspec"><span class="pspec__key">Aplicação</span><span class="pspec__val">Longa distância · Operações regionais</span></div>
-                      <div class="pspec"><span class="pspec__key">Homologação</span><span class="pspec__val">INMETRO — disponível sob consulta</span></div>
+                      <div class="pspec"><span class="pspec__key">Homologação</span><span class="pspec__val">INMETRO — Homologado</span></div>
                     </div>
                     <div class="product-item__tags">
                       <span class="product-item__tag">Eixo motriz</span>
@@ -872,23 +935,23 @@
                 <summary class="product-item__summary">
                   <span class="product-item__dot" aria-hidden="true"></span>
                   <span class="product-item__name">Pneu para Ônibus — Urbano e Rodoviário</span>
-                  <span class="product-item__pill">275/70 R22.5 &middot; 295/80 R22.5 &middot; Frotas</span>
+                  <span class="product-item__pill">Medida conforme frota &middot; Frotas coletivas</span>
                   <span class="product-item__toggle" aria-hidden="true">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
                   </span>
                 </summary>
                 <div class="product-item__panel">
                   <div class="product-item__img-wrap">
-                    <img src="https://m.media-amazon.com/images/I/71Q2YqChFyL._AC_SL1500_.jpg" alt="Pneu para ônibus urbano e rodoviário 275/70 R22.5" loading="lazy" onerror="this.style.opacity='0.3'" />
+                    <img src="assets/pneu_ironhead.jpg" alt="Pneu para ônibus urbano e rodoviário" loading="lazy" onerror="this.style.opacity='0.3'" />
                   </div>
                   <div class="product-item__details">
-                    <p class="product-item__desc">Linha dedicada a frotas de transporte coletivo. Estrutura reforçada para suportar carga elevada em serviço contínuo. Especificações adaptadas ao perfil da operação — urbana intensiva com alto número de frenagens e curvas, ou rodoviária de longa distância.</p>
+                    <p class="product-item__desc">Estrutura reforçada para carga elevada em serviço contínuo. Medida e construção definidas com o cliente conforme o perfil da frota — operação urbana intensiva ou rodoviária de longa distância. As medidas indicadas são referências de operações já realizadas.</p>
                     <div class="product-item__specs">
                       <div class="pspec"><span class="pspec__key">Aplicação</span><span class="pspec__val">Ônibus urbano e rodoviário</span></div>
-                      <div class="pspec"><span class="pspec__key">Medidas</span><span class="pspec__val">275/70 R22.5 · 295/80 R22.5 · 11R22.5</span></div>
+                      <div class="pspec"><span class="pspec__key">Medidas de referência</span><span class="pspec__val">275/70 R22.5 · 295/80 R22.5 · 11R22.5</span></div>
+                      <div class="pspec"><span class="pspec__key">Outras medidas</span><span class="pspec__val">Sob especificação do cliente</span></div>
                       <div class="pspec"><span class="pspec__key">Construção</span><span class="pspec__val">Radial com lona de aço</span></div>
-                      <div class="pspec"><span class="pspec__key">Perfil urbano</span><span class="pspec__val">Resistência lateral · Frenagem frequente</span></div>
-                      <div class="pspec"><span class="pspec__key">Homologação</span><span class="pspec__val">INMETRO — disponível sob consulta</span></div>
+                      <div class="pspec"><span class="pspec__key">Homologação</span><span class="pspec__val">INMETRO — Homologado</span></div>
                     </div>
                     <div class="product-item__tags">
                       <span class="product-item__tag">Frotas urbanas</span>
@@ -916,14 +979,14 @@
             <p class="section-label">Experiência Multissetorial</p>
             <h2 class="section-heading" id="fechamento-heading">Metodologia adaptada ao ambiente de cada setor</h2>
             <p>A experiência operacional em múltiplos setores permite adaptar a metodologia de execução a diferentes ambientes, mantendo disciplina de processo, coordenação e previsibilidade.</p>
-            <p>A BMT trabalha com empresas que buscam execução confiável em ambientes internacionais onde alinhamento de fornecedores, disciplina operacional e responsabilidade são essenciais para resultados previsíveis.</p>
+            <p>A BMT trabalha com empresas que buscam execução confiável em ambientes internacionais. O ponto de partida é sempre o requisito do cliente — produto, especificação, volume e condição de entrega. A partir daí, estruturamos a operação.</p>
             <a href="contato.html" class="btn btn--primary mt-32">
               Iniciar uma Conversa
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
             </a>
           </div>
           <blockquote class="ind-closing__quote fade-up fade-up--delay-2">
-            A execução estruturada mantém <em>disciplina de processo</em> independentemente do setor ou da complexidade da operação.
+            O ponto de partida é sempre o <em>requisito do cliente</em> — não o catálogo do fornecedor.
           </blockquote>
         </div>
       </div>
@@ -935,9 +998,9 @@
         <div class="cta-section__inner">
           <div class="fade-up">
             <h2 class="cta-section__title" id="cta-heading">
-              Converse com a BMT sobre sua próxima operação de importação ou exportação.
+              Tem uma necessidade específica? Fale com a BMT.
             </h2>
-            <p>As tratativas iniciais têm foco em compreender requisitos operacionais e avaliar como a execução pode ser estruturada antes da implementação.</p>
+            <p>As tratativas iniciais têm foco em compreender os requisitos técnicos e operacionais do cliente — e avaliar como a execução pode ser estruturada antes da implementação.</p>
           </div>
           <div class="fade-up fade-up--delay-2" style="flex-shrink:0;">
             <a href="contato.html" class="btn btn--primary" style="font-size:1rem; padding:16px 36px;">
@@ -957,7 +1020,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" aria-label="BMT-Interbiz — Início">
-            <img src="assets/logo_bmt.png" alt="BMT-Interbiz" width="130" height="44" loading="lazy" onerror="this.style.opacity='0.3'" />
+            <img src="assets/logo_bmt.png" alt="BMT-Interbiz" width="130" height="44" loading="lazy" />
           </a>
           <p>Trading company internacional responsável pela execução de operações de importação e exportação por meio do alinhamento estruturado de fornecedores e processos disciplinados.</p>
         </div>
@@ -1006,7 +1069,6 @@
     </div>
   </footer>
 
-  <!-- JS — idêntico ao original -->
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
