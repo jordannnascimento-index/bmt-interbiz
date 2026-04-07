@@ -561,18 +561,11 @@
 
     </div>
   </footer>
-
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    emailjs.init('dh_IltM1dtXXQ29QI');
-
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
     const nav = document.getElementById('site-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
 
     const toggle = document.querySelector('.nav-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -598,10 +591,7 @@
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
@@ -614,12 +604,9 @@
     const submitBtn  = form.querySelector('button[type="submit"]');
     const btnOriginal = submitBtn.innerHTML;
 
-    // Inline validation
     form.querySelectorAll('[required]').forEach(field => {
       field.addEventListener('blur', () => validateField(field));
-      field.addEventListener('input', () => {
-        if (field.classList.contains('error')) validateField(field);
-      });
+      field.addEventListener('input', () => { if (field.classList.contains('error')) validateField(field); });
     });
 
     function validateField(field) {
@@ -638,9 +625,7 @@
         if (field.validity.valueMissing) errEl.textContent = 'Este campo é obrigatório.';
         else if (field.validity.typeMismatch) errEl.textContent = 'Por favor insira um e-mail válido.';
         else errEl.textContent = 'Valor inválido.';
-      } else {
-        if (errEl) errEl.remove();
-      }
+      } else { if (errEl) errEl.remove(); }
     }
 
     form.addEventListener('submit', async (e) => {
@@ -655,43 +640,50 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Enviando...';
 
-      const fromName      = form.querySelector('#nome').value.trim();
-      const fromEmail     = form.querySelector('#email').value.trim();
-      const company       = form.querySelector('#empresa').value.trim();
-      const phone         = form.querySelector('#telefone').value.trim();
-      const operationType = form.querySelector('#tipo-operacao').value;
-      const sector        = form.querySelector('#setor').value;
-      const message       = form.querySelector('#mensagem').value.trim();
+      const fromName  = form.querySelector('#nome').value.trim();
+      const fromEmail = form.querySelector('#email').value.trim();
+      const company   = form.querySelector('#empresa').value.trim();
+      const phone     = form.querySelector('#telefone').value.trim();
+      const opType    = form.querySelector('#tipo-operacao').value;
+      const sector    = form.querySelector('#setor').value;
+      const message   = form.querySelector('#mensagem').value.trim();
 
-      const clientMessage = 'Olá, ' + fromName + '.\n\nRecebemos sua mensagem e entraremos em contato em breve para dar continuidade à conversa sobre sua operação.\n\nAs tratativas iniciais têm foco em compreender seus requisitos operacionais e avaliar como a execução pode ser estruturada antes da implementação.\n\nAtenciosamente,\nBMT-Interbiz\nbmt-interbiz.com';
+      const confirmBody = 'Olá, ' + fromName + '.\n\nRecebemos sua mensagem e entraremos em contato em breve para dar continuidade à conversa sobre sua operação.\n\nAs tratativas iniciais têm foco em compreender seus requisitos operacionais e avaliar como a execução pode ser estruturada antes da implementação.\n\nAtenciosamente,\nBMT-Interbiz\nbmt-interbiz.com';
 
-      const internalParams = {
-        from_name:      fromName,
-        from_email:     fromEmail,
-        company:        company,
-        phone:          phone || '—',
-        operation_type: operationType,
-        sector:         sector || '—',
-        message:        message,
-      };
-
-      const clientParams = {
-        from_name:      fromName,
-        from_email:     fromEmail,
-        client_subject: 'BMT-Interbiz — Recebemos seu contato',
-        client_message: clientMessage,
+      const payload = {
+        access_key:       'c3ad7b8a-e275-4bd9-be29-826117e30927',
+        subject:          'Novo contato via site BMT-Interbiz',
+        from_name:        fromName,
+        email:            fromEmail,
+        company:          company,
+        phone:            phone || '-',
+        operation_type:   opType,
+        sector:           sector || '-',
+        message:          message,
+        replyto:          fromEmail,
+        // Auto-reply to client
+        autoresponse:     'true',
+        autoresponse_subject: 'BMT-Interbiz — Recebemos seu contato',
+        autoresponse_message: confirmBody,
       };
 
       try {
-        await Promise.all([
-          emailjs.send('service_l67u2mg', 'template_jqd31qd', internalParams),
-          emailjs.send('service_l67u2mg', 'template_r8sqna5', clientParams),
-        ]);
-        form.style.display = 'none';
-        successBox.classList.add('visible');
-        successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          form.style.display = 'none';
+          successBox.classList.add('visible');
+          successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          throw new Error(data.message || 'Send failed');
+        }
       } catch (err) {
-        console.error('EmailJS error:', err);
+        console.error('Web3Forms error:', err);
         submitBtn.disabled = false;
         submitBtn.innerHTML = btnOriginal;
         const errP = document.createElement('p');
@@ -703,16 +695,8 @@
     });
 
     const style = document.createElement('style');
-    style.textContent = `
-      .form-input.error,
-      .form-select.error,
-      .form-textarea.error {
-        border-color: #c0392b;
-        box-shadow: 0 0 0 3px rgba(192,57,43,0.10);
-      }
-    `;
+    style.textContent = '.form-input.error,.form-select.error,.form-textarea.error{border-color:#c0392b;box-shadow:0 0 0 3px rgba(192,57,43,0.10);}';
     document.head.appendChild(style);
   </script>
-
 </body>
 </html>
