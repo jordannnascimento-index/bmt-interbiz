@@ -21,7 +21,7 @@
 
   <link rel="alternate" hreflang="pt-BR" href="https://bmt-interbiz.com/contato.html" />
   <link rel="alternate" hreflang="en"    href="https://bmt-interbiz.com/en/contact/" />
-  <link rel="alternate" hreflang="es"    href="https://bmt-interbiz.com/es/contacto.html" />
+  <link rel="alternate" hreflang="es"    href="https://bmt-interbiz.com/es/contacto/" />
 
   <link rel="icon" type="image/png" href="/assets/favicon-bmt.png" />
   <link rel="apple-touch-icon" href="/assets/favicon-bmt.png" />
@@ -35,7 +35,6 @@
     .ct-hero-plain h1 { font-family: var(--font-heading); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; color: #fff; line-height: 1.0; margin: 20px 0 20px; }
     .ct-hero-plain h1 em { color: var(--orange-light); font-style: normal; }
     .ct-hero-plain p { font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.72); max-width: 620px; }
-
     .contact-layout { display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: start; }
     .contact-form-intro { margin-bottom: 40px; }
     .contact-form-intro p { font-family: var(--font-serif); font-size: 1.02rem; line-height: 1.85; color: var(--text-light); margin-bottom: 12px; }
@@ -50,12 +49,13 @@
     .form-input::placeholder, .form-textarea::placeholder { color: #b0b0b0; }
     .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(232,132,10,0.12); }
     .form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23444'%3E%3Cpath d='M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; background-size: 16px; padding-right: 40px; cursor: pointer; }
+    .form-select option[value=""] { color: #b0b0b0; }
     .form-textarea { resize: vertical; min-height: 140px; }
     .form-hint { font-family: var(--font-body); font-size: 0.78rem; color: var(--mid-gray); line-height: 1.5; margin-top: 2px; }
     .form-submit { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-top: 8px; }
     .form-submit-note { font-family: var(--font-body); font-size: 0.8rem; color: var(--mid-gray); line-height: 1.5; max-width: 320px; }
     .form-submit-note em { font-style: italic; color: var(--text-light); }
-    .form-success { display: none; background: var(--off-white); border-left: 4px solid var(--orange); padding: 40px 36px; }
+    .form-success { display: none; background: var(--off-white); border-left: 4px solid var(--orange); padding: 40px 36px; text-align: left; }
     .form-success.visible { display: block; }
     .form-success__icon { width: 40px; height: 40px; color: var(--orange); margin-bottom: 16px; }
     .form-success h3 { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; text-transform: uppercase; color: var(--navy); margin-bottom: 12px; }
@@ -77,13 +77,13 @@
     .sidebar-link { display: flex; align-items: center; gap: 10px; font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; color: var(--navy); padding: 10px 14px; background: #fff; border-left: 2px solid var(--border); transition: border-color var(--transition), color var(--transition); }
     .sidebar-link:hover { border-left-color: var(--orange); color: var(--orange); }
     .sidebar-link svg { width: 14px; height: 14px; flex-shrink: 0; opacity: 0.5; }
-
     @media (max-width: 1024px) { .contact-layout { grid-template-columns: 1fr; gap: 56px; } .contact-sidebar { position: static; } }
     @media (max-width: 768px) { .ct-hero-plain { padding: 96px 0 56px; } .form-row { grid-template-columns: 1fr; } .form-submit { flex-direction: column; align-items: flex-start; } }
   </style>
 </head>
 
 <body>
+
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header role="banner">
@@ -101,11 +101,11 @@
           <li><a href="/en/contact/" class="nav-cta" aria-current="page">Get in Touch</a></li>
         </ul>
         <div class="nav-lang" role="navigation" aria-label="Language selection">
-          <a href="/contato.html" class="nav-lang__item" hreflang="pt-BR">PT</a>
+          <a href="/contato.html" class="nav-lang__item" aria-label="Português" hreflang="pt-BR">PT</a>
           <span class="nav-lang__sep" aria-hidden="true"></span>
-          <a href="/en/contact/" class="nav-lang__item nav-lang__item--active" aria-current="true" hreflang="en">EN</a>
+          <a href="/en/contact/" class="nav-lang__item nav-lang__item--active" aria-current="true" aria-label="English (current language)" hreflang="en">EN</a>
           <span class="nav-lang__sep" aria-hidden="true"></span>
-          <a href="/es/contacto/" class="nav-lang__item" hreflang="es">ES</a>
+          <a href="/es/contacto/" class="nav-lang__item" aria-label="Español" hreflang="es">ES</a>
         </div>
         <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <span></span><span></span><span></span>
@@ -123,7 +123,7 @@
           <span class="nav-mobile__lang-sep" aria-hidden="true"></span>
           <a href="/en/contact/" class="active" hreflang="en">EN</a>
           <span class="nav-mobile__lang-sep" aria-hidden="true"></span>
-          <a href="/es/contacto.html" hreflang="es">ES</a>
+          <a href="/es/contacto/" hreflang="es">ES</a>
         </div>
       </nav>
     </nav>
@@ -135,7 +135,6 @@
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="/en/">Home</a>
-          <a href="/en/about/">About BMT</a>
           <span class="breadcrumb__sep" aria-hidden="true">›</span>
           <span aria-current="page">Contact</span>
         </nav>
@@ -144,11 +143,10 @@
       </div>
     </section>
 
-    <section class="section" id="form" aria-labelledby="form-heading">
+    <section class="section" id="contact" aria-labelledby="form-heading">
       <div class="container">
         <div class="contact-layout">
 
-          <!-- FORM -->
           <div class="contact-form-wrap fade-up">
             <div class="contact-form-intro">
               <p class="section-label">Contact Form</p>
@@ -168,7 +166,6 @@
             </div>
 
             <form class="contact-form" id="contact-form" novalidate aria-label="BMT-Interbiz contact form">
-
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="name">Name <span aria-hidden="true">*</span></label>
@@ -179,7 +176,6 @@
                   <input class="form-input" type="text" id="company" name="company" placeholder="Company name" autocomplete="organization" required aria-required="true" />
                 </div>
               </div>
-
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="email">Email <span aria-hidden="true">*</span></label>
@@ -190,7 +186,6 @@
                   <input class="form-input" type="tel" id="phone" name="phone" placeholder="+55 (00) 00000-0000" autocomplete="tel" />
                 </div>
               </div>
-
               <div class="form-group">
                 <label class="form-label" for="operation-type">Operation Type <span aria-hidden="true">*</span></label>
                 <select class="form-select" id="operation-type" name="operation-type" required aria-required="true">
@@ -202,7 +197,6 @@
                   <option value="other">Other</option>
                 </select>
               </div>
-
               <div class="form-group">
                 <label class="form-label" for="sector">Sector / Industry</label>
                 <select class="form-select" id="sector" name="sector">
@@ -215,13 +209,11 @@
                   <option value="other">Other sector</option>
                 </select>
               </div>
-
               <div class="form-group">
                 <label class="form-label" for="message">Message <span aria-hidden="true">*</span></label>
                 <textarea class="form-textarea" id="message" name="message" placeholder="Briefly describe your operation or what you would like to discuss with BMT." required aria-required="true"></textarea>
                 <p class="form-hint">Structured execution begins with a clear understanding of requirements. The more context you share, the more objective the initial conversation will be.</p>
               </div>
-
               <div class="form-submit">
                 <p class="form-submit-note">
                   <em>Initial discussions focus on understanding operational requirements and evaluating how execution can be structured before implementation.</em>
@@ -231,13 +223,10 @@
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
                 </button>
               </div>
-
             </form>
           </div>
 
-          <!-- SIDEBAR -->
           <aside class="contact-sidebar fade-up fade-up--delay-2" aria-label="Contact information">
-
             <div class="sidebar-block sidebar-block--dark">
               <p class="sidebar-block__label">How it works</p>
               <p class="sidebar-block__title">The initial conversation</p>
@@ -256,13 +245,11 @@
                 </div>
               </div>
             </div>
-
             <div class="sidebar-block">
               <p class="sidebar-block__label">Operational note</p>
               <p class="sidebar-block__title">Execution begins with understanding</p>
               <p>Structured execution begins with a clear understanding of requirements. The initial conversation therefore does not aim to present an immediate proposal, but to understand the operation and evaluate how execution can be structured.</p>
             </div>
-
             <div class="sidebar-block">
               <p class="sidebar-block__label">Learn more</p>
               <nav class="sidebar-links" aria-label="Related links">
@@ -284,8 +271,8 @@
                 </a>
               </nav>
             </div>
-
           </aside>
+
         </div>
       </div>
     </section>
@@ -321,15 +308,17 @@
         </nav>
         <div class="footer-col">
           <h4>Contact</h4>
-          <ul role="list"><li><a href="/en/contact/">Get in Touch</a></li></ul>
+          <ul role="list">
+            <li><a href="/en/contact/">Get in Touch</a></li>
+          </ul>
           <div style="margin-top:20px;">
             <p style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.28); margin-bottom:10px;">Languages</p>
             <div style="display:flex; gap:8px; align-items:center;">
-              <a href="/contato.html" style="font-size:0.78rem;">PT</a>
+              <a href="/contato.html" aria-label="Português" style="font-size:0.78rem;">PT</a>
               <span style="color:rgba(255,255,255,0.2);">|</span>
-              <a href="/en/contact/" style="font-size:0.78rem; color:var(--orange-light);">EN</a>
+              <a href="/en/contact/" aria-label="English (current)" style="font-size:0.78rem; color:var(--orange-light);">EN</a>
               <span style="color:rgba(255,255,255,0.2);">|</span>
-              <a href="/es/contacto.html" style="font-size:0.78rem;">ES</a>
+              <a href="/es/contacto/" aria-label="Español" style="font-size:0.78rem;">ES</a>
             </div>
           </div>
         </div>
@@ -344,22 +333,51 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
+    emailjs.init('dh_IltM1dtXXQ29QI');
+
     document.getElementById('current-year').textContent = new Date().getFullYear();
+
     const nav = document.getElementById('site-nav');
     window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+
     const toggle = document.querySelector('.nav-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-    toggle.addEventListener('click', () => { const isOpen = mobileMenu.classList.toggle('open'); toggle.setAttribute('aria-expanded', isOpen); mobileMenu.setAttribute('aria-hidden', !isOpen); });
-    mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); mobileMenu.setAttribute('aria-hidden', 'true'); }); });
-    document.addEventListener('click', (e) => { if (!nav.contains(e.target)) { mobileMenu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); mobileMenu.setAttribute('aria-hidden', 'true'); } });
+    toggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      mobileMenu.setAttribute('aria-hidden', !isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      }
+    });
 
-    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible')); }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+    }
 
-    const form = document.getElementById('contact-form');
+    const form       = document.getElementById('contact-form');
     const successBox = document.getElementById('form-success');
+    const submitBtn  = form.querySelector('button[type="submit"]');
+    const btnOriginal = submitBtn.innerHTML;
 
     form.querySelectorAll('[required]').forEach(field => {
       field.addEventListener('blur', () => validateField(field));
@@ -372,26 +390,84 @@
       field.setAttribute('aria-invalid', !isValid);
       let errEl = field.parentElement.querySelector('.field-error');
       if (!isValid) {
-        if (!errEl) { errEl = document.createElement('p'); errEl.className = 'field-error'; errEl.setAttribute('role', 'alert'); errEl.style.cssText = 'font-family:var(--font-body);font-size:0.75rem;color:#c0392b;margin-top:4px;'; field.parentElement.appendChild(errEl); }
+        if (!errEl) {
+          errEl = document.createElement('p');
+          errEl.className = 'field-error';
+          errEl.setAttribute('role', 'alert');
+          errEl.style.cssText = 'font-family:var(--font-body);font-size:0.75rem;color:#c0392b;margin-top:4px;';
+          field.parentElement.appendChild(errEl);
+        }
         if (field.validity.valueMissing) errEl.textContent = 'This field is required.';
         else if (field.validity.typeMismatch) errEl.textContent = 'Please enter a valid email address.';
         else errEl.textContent = 'Invalid value.';
-      } else { if (errEl) errEl.remove(); }
+      } else {
+        if (errEl) errEl.remove();
+      }
     }
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       let valid = true;
-      form.querySelectorAll('[required]').forEach(field => { validateField(field); if (!field.checkValidity()) valid = false; });
+      form.querySelectorAll('[required]').forEach(field => {
+        validateField(field);
+        if (!field.checkValidity()) valid = false;
+      });
       if (!valid) { form.querySelector('.error')?.focus(); return; }
-      form.style.display = 'none';
-      successBox.classList.add('visible');
-      successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      const fromName      = form.querySelector('#name').value.trim();
+      const fromEmail     = form.querySelector('#email').value.trim();
+      const company       = form.querySelector('#company').value.trim();
+      const phone         = form.querySelector('#phone').value.trim();
+      const operationType = form.querySelector('#operation-type').value;
+      const sector        = form.querySelector('#sector').value;
+      const message       = form.querySelector('#message').value.trim();
+
+      const clientMessage = 'Hello, ' + fromName + '.\n\nWe have received your message and will be in touch shortly to continue the conversation about your operation.\n\nInitial discussions focus on understanding your operational requirements and evaluating how execution can be structured before implementation.\n\nBest regards,\nBMT-Interbiz\nbmt-interbiz.com';
+
+      const internalParams = {
+        from_name:      fromName,
+        from_email:     fromEmail,
+        company:        company,
+        phone:          phone || '-',
+        operation_type: operationType,
+        sector:         sector || '-',
+        message:        message,
+      };
+
+      const clientParams = {
+        from_name:      fromName,
+        from_email:     fromEmail,
+        client_subject: 'BMT-Interbiz - We received your message',
+        client_message: clientMessage,
+      };
+
+      try {
+        await Promise.all([
+          emailjs.send('service_l67u2mg', 'template_jqd31qd', internalParams),
+          emailjs.send('service_l67u2mg', 'template_r8sqna5', clientParams),
+        ]);
+        form.style.display = 'none';
+        successBox.classList.add('visible');
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } catch (err) {
+        console.error('EmailJS error:', err);
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = btnOriginal;
+        const errP = document.createElement('p');
+        errP.style.cssText = 'font-family:var(--font-body);font-size:0.85rem;color:#c0392b;margin-top:12px;';
+        errP.textContent = 'Error sending. Please try again.';
+        form.querySelector('.form-submit').appendChild(errP);
+        setTimeout(() => errP.remove(), 5000);
+      }
     });
 
     const style = document.createElement('style');
-    style.textContent = `.form-input.error,.form-select.error,.form-textarea.error{border-color:#c0392b;box-shadow:0 0 0 3px rgba(192,57,43,0.10);}`;
+    style.textContent = '.form-input.error,.form-select.error,.form-textarea.error{border-color:#c0392b;box-shadow:0 0 0 3px rgba(192,57,43,0.10);}';
     document.head.appendChild(style);
   </script>
+
 </body>
 </html>
