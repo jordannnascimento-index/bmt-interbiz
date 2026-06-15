@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO Primary -->
+  <title>ACM Direto da Fábrica | Reduza até 40% no Custo | BMT-Interbiz</title>
+  <meta name="description" content="Compre ACM (Chapa de Alumínio Composto) direto da fábrica, sem intermediário, e reduza até 40% no custo da sua obra. Importação por container para construtoras de RS, SC e PR." />
+  <meta name="keywords" content="importação ACM, ACM direto da fábrica, fornecedor de ACM, chapa de alumínio composto importação, ACM para construtoras, importação por container" />
+  <meta name="author" content="BMT-Interbiz" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bmt-interbiz.com/acm.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bmt-interbiz.com/acm.html" />
+  <meta property="og:title" content="ACM Direto da Fábrica | Reduza até 40% no Custo | BMT-Interbiz" />
+  <meta property="og:description" content="Compre ACM direto da fábrica, sem intermediário. Importação por container para construtoras de RS, SC e PR." />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="BMT-Interbiz" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon-bmt.png" />
+  <link rel="apple-touch-icon" href="assets/favicon-bmt.png" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── ACM LANDING PAGE — SPECIFIC ── */
+
+    /* ── HERO DIVIDIDO: texto à esquerda, imagem à direita ── */
+    /* Desacoplado do .hero base (sem flex/overflow/min-height que cortavam o topo) */
+    .acm-hero {
+      display: block;
+      position: relative;
+      min-height: 0;
+      overflow: visible;
+      background: var(--navy);
+      padding-top: calc(72px + 56px);
+      padding-bottom: 80px;
+    }
+    .acm-hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: stretch;
+    }
+    .acm-hero__text { max-width: 600px; align-self: center; }
+    .acm-hero__text .hero__title { margin-bottom: 18px; }
+    .acm-hero__text .hero__subtitle { margin-bottom: 22px; color: rgba(255,255,255,0.85); }
+    .acm-hero__text .hero__subtitle:last-of-type { margin-bottom: 36px; }
+    .hero__disclaimer {
+      margin: 0 0 30px;
+      max-width: 540px;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* Imagem da direita — troque por uma foto de fachada/obra em ACM quando disponível.
+       Sem imagem, o gradiente navy + textura mantém o bloco íntegro. */
+    .acm-hero__media {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 460px;
+      background-color: var(--navy-mid);
+      background-image:
+        linear-gradient(135deg, rgba(232,132,10,0.18), rgba(13,31,53,0.0)),
+        url('assets/acm_landingpage.jpg');
+      background-size: cover;
+      background-position: center;
+      border-top: 3px solid var(--orange);
+      overflow: hidden;
+    }
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange-light);
+      margin-bottom: 22px;
+    }
+    .hero__badge::before {
+      content: '';
+      width: 28px; height: 2px;
+      background: var(--orange);
+    }
+
+    /* Nav reduzida: Home + botão de contato */
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .nav-home {
+      color: rgba(255,255,255,0.85);
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-home:hover { color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* Faixa de provas / números */
+    .acm-stats { background: var(--navy-mid); padding: 0; }
+    .acm-stats__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-dark);
+    }
+    .acm-stat {
+      background: var(--navy-mid);
+      padding: 40px 36px;
+      text-align: center;
+    }
+    .acm-stat__num {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      font-weight: 800;
+      color: var(--orange-light);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .acm-stat__label {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.5;
+    }
+
+    /* Produto / benefícios */
+    .acm-benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .acm-benefit {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 32px 28px;
+      border-top: 3px solid var(--orange);
+    }
+    .acm-benefit__title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .acm-benefit__text { font-size: 0.92rem; color: var(--text-light); line-height: 1.7; }
+
+    /* Comparativo: varejo vs BMT */
+    .acm-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-dark);
+      margin-top: 48px;
+      border: 1px solid var(--border-dark);
+    }
+    .acm-compare__col { background: var(--navy-mid); padding: 40px 36px; border-top: 3px solid transparent; }
+    .acm-compare__col--win { background: var(--navy); padding: 40px 36px; border-top: 3px solid var(--orange); }
+    .acm-compare__tag {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .acm-compare__col .acm-compare__tag { color: rgba(255,255,255,0.45); }
+    .acm-compare__col--win .acm-compare__tag { color: var(--orange-light); }
+    .acm-compare__title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+    .acm-compare ul { display: flex; flex-direction: column; gap: 14px; }
+    .acm-compare li {
+      display: flex;
+      gap: 12px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.80);
+    }
+    .acm-compare li svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 3px; }
+    .acm-compare__col li svg { color: rgba(255,255,255,0.30); }
+    .acm-compare__col--win li svg { color: var(--orange-light); }
+
+    /* Form (mesmo padrão da página de contato) */
+    .acm-form-section { background: var(--off-white); }
+    .acm-form-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 22px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-group--full { grid-column: 1 / -1; }
+    .form-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--text-body);
+    }
+    .form-label span { color: var(--orange); margin-left: 2px; }
+    .form-input, .form-select, .form-textarea {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-body);
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 0;
+      padding: 13px 16px;
+      width: 100%;
+      appearance: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      line-height: 1.5;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: #b0b0b0; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(232,132,10,0.12);
+    }
+    .form-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23444'%3E%3Cpath d='M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 16px;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+    .form-select option[value=""] { color: #b0b0b0; }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-hint { font-family: var(--font-body); font-size: 0.78rem; color: var(--mid-gray); line-height: 1.5; margin-top: 2px; }
+
+    .form-success {
+      display: none;
+      background: #fff;
+      border-left: 4px solid var(--orange);
+      padding: 40px 36px;
+    }
+    .form-success.visible { display: block; }
+    .form-success__icon { width: 40px; height: 40px; color: var(--orange); margin-bottom: 16px; }
+    .form-success h3 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .form-success p { font-family: var(--font-serif); font-size: 1rem; line-height: 1.8; color: var(--text-light); }
+
+    /* Sidebar do formulário */
+    .acm-sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 96px; }
+    .sidebar-block { background: #fff; padding: 30px 26px; border-top: 3px solid var(--orange); border: 1px solid var(--border); border-top: 3px solid var(--orange); }
+    .sidebar-block--dark { background: var(--navy); border: none; border-top: 3px solid var(--orange); }
+    .sidebar-block__label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+    .sidebar-block p { font-size: 0.9rem; line-height: 1.7; color: var(--text-light); }
+    .sidebar-block--dark p { color: rgba(255,255,255,0.80); }
+    .sidebar-step { display: flex; gap: 14px; margin-bottom: 18px; }
+    .sidebar-step:last-child { margin-bottom: 0; }
+    .sidebar-step__num {
+      font-family: var(--font-heading);
+      font-size: 1rem; font-weight: 800;
+      color: var(--orange);
+      width: 28px; height: 28px;
+      border: 1.5px solid var(--orange);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .sidebar-step p { font-size: 0.88rem; }
+
+    /* Aviso FCL */
+    .acm-fcl-note {
+      display: flex;
+      gap: 16px;
+      background: var(--navy);
+      border-left: 4px solid var(--orange);
+      padding: 24px 28px;
+      margin-top: 40px;
+    }
+    .acm-fcl-note svg { width: 22px; height: 22px; color: var(--orange-light); flex-shrink: 0; margin-top: 2px; }
+    .acm-fcl-note p { color: rgba(255,255,255,0.82) !important; font-size: 0.92rem; line-height: 1.7; }
+    .acm-fcl-note strong { color: #fff; }
+
+    /* Galeria de aplicações */
+    .acm-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .acm-gallery__item { margin: 0; }
+    .acm-gallery__img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background-color: var(--navy);
+      background-size: cover;
+      background-position: center;
+      border-top: 3px solid var(--orange);
+    }
+    .acm-gallery figcaption {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.85);
+      margin-top: 14px;
+    }
+
+    /* Linhas / acabamentos */
+    .acm-lines {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-top: 48px;
+      margin-bottom: 56px;
+    }
+    .acm-line {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--orange);
+      padding: 22px 20px;
+    }
+    .acm-line h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .acm-line p { font-size: 0.85rem; line-height: 1.6; color: var(--text-light); }
+
+    /* Ficha técnica */
+    .acm-spec { border: 1px solid var(--border); border-top: 3px solid var(--orange); background: #fff; }
+    .acm-spec__row {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 20px;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .acm-spec__row:nth-child(even) { background: var(--off-white); }
+    .acm-spec__row:last-child { border-bottom: none; }
+    .acm-spec__row span {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      align-self: center;
+    }
+    .acm-spec__row strong {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-body);
+    }
+
+    @media (max-width: 900px) {
+      .acm-hero__grid { grid-template-columns: 1fr; gap: 36px; }
+      .acm-hero__text { max-width: none; }
+      .acm-hero__media { height: 300px; min-height: 0; order: -1; }
+    }
+    @media (max-width: 1024px) {
+      .acm-benefits-grid { grid-template-columns: 1fr 1fr; }
+      .acm-form-layout { grid-template-columns: 1fr; gap: 40px; }
+      .acm-sidebar { position: static; flex-direction: row; flex-wrap: wrap; }
+      .acm-sidebar > * { flex: 1 1 280px; }
+    }
+    @media (max-width: 768px) {
+      .acm-stats__grid { grid-template-columns: 1fr; }
+      .acm-benefits-grid { grid-template-columns: 1fr; }
+      .acm-compare { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .acm-sidebar { flex-direction: column; }
+      .acm-gallery { grid-template-columns: 1fr; }
+      .acm-spec__row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+  <header>
+    <nav id="site-nav" aria-label="Navegação principal">
+      <div class="nav-inner">
+
+        <a href="index.html" class="nav-logo" aria-label="BMT-Interbiz — Página inicial">
+          <img src="assets/logo_bmt.png" alt="BMT-Interbiz" width="120" height="40" />
+        </a>
+
+        <div class="nav-actions">
+          <a href="index.html" class="nav-home">Home</a>
+          <a href="#acm-form" class="nav-cta">Fale Conosco</a>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="acm-hero" aria-label="ACM direto da fábrica">
+      <div class="container">
+        <div class="acm-hero__grid">
+
+          <div class="acm-hero__text fade-up">
+            <span class="hero__badge">ACM · Chapa de Alumínio Composto</span>
+            <h1 class="hero__title">
+              Compre ACM direto da fábrica e<br />
+              <em>reduza até 40%<sup>*</sup></em> no custo da sua obra
+            </h1>
+            <p class="hero__disclaimer">
+              *A redução de até 40% varia de acordo com a composição do pedido, a taxa do dólar e os custos logísticos.
+            </p>
+            <p class="hero__subtitle">
+              Construtora que compra com inteligência compra direto da fábrica, sem revenda e sem intermediário.
+            </p>
+            <p class="hero__subtitle">
+              A BMT-Interbiz conecta sua obra diretamente ao fabricante e estrutura toda a operação de importação por você.
+            </p>
+            <div class="hero__actions">
+              <a href="#acm-form" class="btn btn--primary">
+                Quero reduzir meu custo de ACM
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Imagem da direita (troque assets/acm_landingpage.jpg pela foto do produto/obra) -->
+          <div class="acm-hero__media fade-up fade-up--delay-2" role="img" aria-label="Fachada em ACM"></div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ÂNCORA -->
+    <div class="anchor-quote" role="complementary" aria-label="Conceito central">
+      <div class="container">
+        <p class="anchor-quote__text">
+          Não é comprar mais barato. É comprar <em>do jeito certo</em>, direto de quem fabrica.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAIXA DE NÚMEROS -->
+    <section class="acm-stats" aria-label="Indicadores">
+      <div class="acm-stats__grid">
+        <div class="acm-stat fade-up">
+          <div class="acm-stat__num">até 40%</div>
+          <p class="acm-stat__label">de redução no custo do produto frente ao varejo local</p>
+        </div>
+        <div class="acm-stat fade-up fade-up--delay-1">
+          <div class="acm-stat__num">0</div>
+          <p class="acm-stat__label">intermediários: você compra direto da fábrica</p>
+        </div>
+        <div class="acm-stat fade-up fade-up--delay-2">
+          <div class="acm-stat__num">RS · SC · PR</div>
+          <p class="acm-stat__label">atendimento a construtoras no Sul do Brasil</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O PRODUTO -->
+    <section class="section" id="produto" aria-labelledby="produto-heading">
+      <div class="container">
+        <p class="section-label fade-up">O Produto</p>
+        <h2 class="section-heading fade-up fade-up--delay-1" id="produto-heading">
+          ACM para fachadas e revestimentos<br />de obras verticais e horizontais
+        </h2>
+        <span class="section-divider fade-up fade-up--delay-2" aria-hidden="true"></span>
+        <p class="section-subheading fade-up fade-up--delay-2">
+          O ACM (Chapa de Alumínio Composto) é o material de referência para revestimento de fachadas: leve, resistente e com acabamento de alto padrão. Para a construtora, é um item de grande volume e, por isso, o ponto onde a forma de comprar faz a maior diferença no custo da obra.
+        </p>
+
+        <div class="acm-benefits-grid">
+          <div class="acm-benefit fade-up">
+            <h3 class="acm-benefit__title">Aplicação</h3>
+            <p class="acm-benefit__text">Revestimento de fachadas, frentes comerciais, marquises e detalhes arquitetônicos em obras de médio e grande porte.</p>
+          </div>
+          <div class="acm-benefit fade-up fade-up--delay-1">
+            <h3 class="acm-benefit__title">Por que pesa no orçamento</h3>
+            <p class="acm-benefit__text">É comprado em volume. Pequenas diferenças no preço por m² se multiplicam ao longo da obra, e comprar direto da fábrica muda esse número de forma relevante.</p>
+          </div>
+          <div class="acm-benefit fade-up fade-up--delay-2">
+            <h3 class="acm-benefit__title">Fornecimento estável</h3>
+            <p class="acm-benefit__text">Operação por container completo, com especificação alinhada antes da compra, para garantir consistência entre lotes ao longo do cronograma.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA DE APLICAÇÕES -->
+    <section class="section section--mid" id="aplicacoes" aria-labelledby="aplicacoes-heading">
+      <div class="container">
+        <p class="section-label fade-up">Aplicações</p>
+        <h2 class="section-heading fade-up fade-up--delay-1" id="aplicacoes-heading">
+          ACM aplicado em fachadas<br />e obras de todo porte
+        </h2>
+        <p class="section-subheading fade-up fade-up--delay-2">
+          Do revestimento de fachadas a frentes comerciais e edifícios institucionais: acabamento de alto padrão, com leveza e durabilidade.
+        </p>
+
+        <div class="acm-gallery">
+          <figure class="acm-gallery__item fade-up">
+            <div class="acm-gallery__img" style="background-image:url('assets/fachada_acm.webp')" role="img" aria-label="Fachada em ACM"></div>
+            <figcaption>Fachadas e revestimento externo</figcaption>
+          </figure>
+          <figure class="acm-gallery__item fade-up fade-up--delay-1">
+            <div class="acm-gallery__img" style="background-image:url('assets/acm_lojas.jpg')" role="img" aria-label="Frente comercial em ACM"></div>
+            <figcaption>Lojas, shoppings e frentes comerciais</figcaption>
+          </figure>
+          <figure class="acm-gallery__item fade-up fade-up--delay-2">
+            <div class="acm-gallery__img" style="background-image:url('assets/acm_empresas.avif')" role="img" aria-label="Edifício corporativo em ACM"></div>
+            <figcaption>Edifícios corporativos e institucionais</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESPECIFICAÇÕES: LINHAS + FICHA TÉCNICA -->
+    <section class="section" id="especificacoes" aria-labelledby="especificacoes-heading">
+      <div class="container">
+        <p class="section-label fade-up">Especificações</p>
+        <h2 class="section-heading fade-up fade-up--delay-1" id="especificacoes-heading">
+          Linhas, acabamentos<br />e ficha técnica
+        </h2>
+        <span class="section-divider fade-up fade-up--delay-2" aria-hidden="true"></span>
+        <p class="section-subheading fade-up fade-up--delay-2">
+          Mais de 120 cores e acabamentos, todas as cores RAL e Pantone, com customização de cor e tamanho sob medida para o seu projeto.
+        </p>
+
+        <!-- Linhas / acabamentos -->
+        <div class="acm-lines">
+          <div class="acm-line fade-up"><h3>PE</h3><p>Revestimento de fachadas com ótimo custo-benefício e ampla variedade de cores.</p></div>
+          <div class="acm-line fade-up"><h3>PVDF</h3><p>Alta resistência ao tempo para fachadas, com garantia de cor estendida.</p></div>
+          <div class="acm-line fade-up"><h3>Printable</h3><p>Superfície para impressão UV, ideal para sinalização e totens.</p></div>
+          <div class="acm-line fade-up"><h3>Mirror</h3><p>Acabamento espelhado para detalhes decorativos e fachadas de destaque.</p></div>
+          <div class="acm-line fade-up"><h3>Brushed</h3><p>Acabamento escovado metálico em ouro, prata, cobre, preto e mais.</p></div>
+          <div class="acm-line fade-up"><h3>Fireproof</h3><p>Núcleo antichamas classe B1 ou A2 para projetos com exigência de incêndio.</p></div>
+          <div class="acm-line fade-up"><h3>Natural</h3><p>Padrões de madeira e pedra, com aparência natural e baixa manutenção.</p></div>
+        </div>
+
+        <!-- Ficha técnica -->
+        <div class="acm-spec fade-up">
+          <div class="acm-spec__row"><span>Espessura do painel</span><strong>2, 3, 4, 5 e 6 mm</strong></div>
+          <div class="acm-spec__row"><span>Lâmina de alumínio</span><strong>0,018 a 0,50 mm</strong></div>
+          <div class="acm-spec__row"><span>Largura</span><strong>1220 / 1250 / 1500 mm</strong></div>
+          <div class="acm-spec__row"><span>Comprimento</span><strong>2440 / 3050 / 4050 / 5000 mm</strong></div>
+          <div class="acm-spec__row"><span>Liga de alumínio</span><strong>AA1100 / AA3003</strong></div>
+          <div class="acm-spec__row"><span>Acabamentos</span><strong>PE · PVDF · Printable · Mirror · Brushed · Fireproof · Natural</strong></div>
+          <div class="acm-spec__row"><span>Cores</span><strong>RAL e Pantone · 120+ opções · customização sob medida</strong></div>
+          <div class="acm-spec__row"><span>Garantia de cor</span><strong>PE 8 a 10 anos · PVDF 15 a 20 anos</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A ESCOLHA INTELIGENTE: COMPARATIVO -->
+    <section class="section section--dark" id="por-que-bmt" aria-labelledby="porque-heading">
+      <div class="container">
+        <p class="section-label fade-up">A Escolha Inteligente</p>
+        <h2 class="section-heading fade-up fade-up--delay-1" id="porque-heading">
+          Por que comprar ACM com a BMT<br />é a decisão mais inteligente
+        </h2>
+        <p class="section-subheading fade-up fade-up--delay-2">
+          A diferença não está só no preço. Está em quem você tem do outro lado da operação: um revendedor que repassa custo, ou uma trading que estrutura a importação direto com a fábrica.
+        </p>
+
+        <div class="acm-compare">
+          <div class="acm-compare__col fade-up">
+            <p class="acm-compare__tag">Compra no varejo local</p>
+            <h3 class="acm-compare__title">Com intermediário</h3>
+            <ul role="list">
+              <li>
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM5.5 7.25a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5Z" clip-rule="evenodd"/></svg>
+                Preço já vem com a margem do revendedor embutida
+              </li>
+              <li>
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM5.5 7.25a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5Z" clip-rule="evenodd"/></svg>
+                Você não enxerga a origem nem controla a especificação
+              </li>
+              <li>
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM5.5 7.25a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5Z" clip-rule="evenodd"/></svg>
+                Custo sobe a cada elo da cadeia até chegar na obra
+              </li>
+            </ul>
+          </div>
+
+          <div class="acm-compare__col--win fade-up fade-up--delay-1">
+            <p class="acm-compare__tag">Compra direta via BMT</p>
+            <h3 class="acm-compare__title">Direto da fábrica</h3>
+            <ul role="list">
+              <li>
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm3.07-9.53a.75.75 0 0 1 0 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-1.5-1.5a.75.75 0 1 1 1.06-1.06l.97.97 2.97-2.97a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/></svg>
+                Redução de até 40%: você paga o preço de fábrica
+              </li>
+              <li>
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm3.07-9.53a.75.75 0 0 1 0 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-1.5-1.5a.75.75 0 1 1 1.06-1.06l.97.97 2.97-2.97a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/></svg>
+                Especificação alinhada antes da compra, não depois
+              </li>
+              <li>
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm3.07-9.53a.75.75 0 0 1 0 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-1.5-1.5a.75.75 0 1 1 1.06-1.06l.97.97 2.97-2.97a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/></svg>
+                A BMT estrutura toda a operação de importação por você
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section section--mid" id="como-funciona" aria-labelledby="comofunciona-heading">
+      <div class="container">
+        <p class="section-label fade-up">Como Funciona</p>
+        <h2 class="section-heading fade-up fade-up--delay-1" id="comofunciona-heading">
+          Da especificação à sua obra<br />em um processo estruturado
+        </h2>
+        <p class="section-subheading fade-up fade-up--delay-2 mb-48">
+          Você não precisa entender de importação. A BMT conduz cada etapa de forma disciplinada. Você recebe o ACM com o custo de fábrica e a operação resolvida.
+        </p>
+
+        <ol class="process-steps" aria-label="Etapas da operação de ACM">
+          <li class="process-step fade-up">
+            <span class="process-step__number" aria-hidden="true">01</span>
+            <div>
+              <h3 class="process-step__title">Entendimento do que sua obra precisa</h3>
+              <p class="process-step__text">Definimos juntos especificação, volume e prazo do ACM antes de qualquer cotação. É aqui que a operação começa a ser desenhada para reduzir custo sem comprometer a entrega.</p>
+            </div>
+          </li>
+          <li class="process-step fade-up fade-up--delay-1">
+            <span class="process-step__number" aria-hidden="true">02</span>
+            <div>
+              <h3 class="process-step__title">Sourcing direto na fábrica</h3>
+              <p class="process-step__text">A BMT aciona o fabricante diretamente, sem revendedores no meio. O preço que você recebe é o preço de fábrica, não o preço já remarcado do varejo nacional.</p>
+            </div>
+          </li>
+          <li class="process-step fade-up fade-up--delay-2">
+            <span class="process-step__number" aria-hidden="true">03</span>
+            <div>
+              <h3 class="process-step__title">Operação de importação estruturada</h3>
+              <p class="process-step__text">Importação por container completo, com a parte técnica, comercial e operacional alinhada antes do embarque. Menos incerteza, mais previsibilidade no fornecimento.</p>
+            </div>
+          </li>
+          <li class="process-step fade-up fade-up--delay-3">
+            <span class="process-step__number" aria-hidden="true">04</span>
+            <div>
+              <h3 class="process-step__title">Entrega e continuidade</h3>
+              <p class="process-step__text">O ACM chega à sua obra com o custo reduzido. E o mesmo processo pode se repetir nos próximos materiais de construção que você importa por volume.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FORMULÁRIO / LEAD -->
+    <section class="section acm-form-section" id="acm-form" aria-labelledby="form-heading">
+      <div class="container">
+        <div class="acm-form-layout">
+
+          <!-- COLUNA DO FORMULÁRIO -->
+          <div>
+            <p class="section-label fade-up">Solicite sua Cotação</p>
+            <h2 class="section-heading fade-up fade-up--delay-1" id="form-heading">
+              Descubra quanto sua obra<br />economiza com ACM direto da fábrica
+            </h2>
+            <span class="section-divider fade-up fade-up--delay-2" aria-hidden="true"></span>
+            <p class="section-subheading fade-up fade-up--delay-2 mb-32">
+              Preencha os dados abaixo. Um especialista da BMT entra em contato para entender sua demanda e montar a cotação de ACM direto da fábrica.
+            </p>
+
+            <!-- SUCESSO -->
+            <div class="form-success" id="form-success" role="alert" aria-live="polite">
+              <svg class="form-success__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="20" cy="20" r="19" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 20.5L17 25.5L28 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <h3>Solicitação recebida</h3>
+              <p>Obrigado. Um especialista da BMT entrará em contato em breve para montar sua cotação de ACM direto da fábrica.</p>
+            </div>
+
+            <!-- FORM -->
+            <form class="contact-form" id="acm-lead-form" novalidate aria-label="Formulário de cotação de ACM">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="nome">Nome <span aria-hidden="true">*</span></label>
+                  <input class="form-input" type="text" id="nome" name="nome"
+                    placeholder="Seu nome" autocomplete="given-name" required aria-required="true" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="empresa">Construtora / Empresa <span aria-hidden="true">*</span></label>
+                  <input class="form-input" type="text" id="empresa" name="empresa"
+                    placeholder="Nome da empresa" autocomplete="organization" required aria-required="true" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="email">E-mail <span aria-hidden="true">*</span></label>
+                  <input class="form-input" type="email" id="email" name="email"
+                    placeholder="seu@email.com" autocomplete="email" required aria-required="true" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="telefone">WhatsApp / Telefone <span aria-hidden="true">*</span></label>
+                  <input class="form-input" type="tel" id="telefone" name="telefone"
+                    placeholder="+55 (00) 00000-0000" autocomplete="tel" required aria-required="true" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="estado">Estado <span aria-hidden="true">*</span></label>
+                  <select class="form-select" id="estado" name="estado" required aria-required="true">
+                    <option value="" disabled selected>Selecione o estado</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="PR">Paraná</option>
+                    <option value="outro">Outro estado</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="volume">Como você compra hoje</label>
+                  <select class="form-select" id="volume" name="volume">
+                    <option value="" disabled selected>Selecione (opcional)</option>
+                    <option value="container">Compro / consigo comprar por container</option>
+                    <option value="volume-alto">Volume alto, mas ainda avalio container</option>
+                    <option value="avaliando">Estou avaliando para uma obra específica</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group form-group--full">
+                <label class="form-label" for="mensagem">Sua demanda</label>
+                <textarea class="form-textarea" id="mensagem" name="mensagem"
+                  placeholder="Conte rapidamente sobre a obra: volume estimado de ACM, prazo e o que precisa avaliar."></textarea>
+                <p class="form-hint">Quanto mais contexto, mais objetiva e rápida fica a cotação.</p>
+              </div>
+
+              <div style="padding-top:4px;">
+                <button type="submit" class="btn btn--primary" style="font-size:1rem; padding:16px 36px;">
+                  Solicitar cotação de ACM
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+                </button>
+              </div>
+
+            </form>
+
+            <!-- AVISO FCL -->
+            <div class="acm-fcl-note fade-up">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p><strong>Importante:</strong> a BMT opera com importação por container completo (FCL). Esta condição é ideal para construtoras que compram ACM por volume. Não trabalhamos com pequenas quantidades avulsas.</p>
+            </div>
+          </div>
+
+          <!-- SIDEBAR -->
+          <aside class="acm-sidebar" aria-label="Informações complementares">
+            <div class="sidebar-block">
+              <p class="sidebar-block__label">O que acontece depois</p>
+              <div class="sidebar-step">
+                <span class="sidebar-step__num" aria-hidden="true">1</span>
+                <p>Você envia seus dados e o contexto da obra.</p>
+              </div>
+              <div class="sidebar-step">
+                <span class="sidebar-step__num" aria-hidden="true">2</span>
+                <p>Um especialista entra em contato para alinhar especificação e volume.</p>
+              </div>
+              <div class="sidebar-step">
+                <span class="sidebar-step__num" aria-hidden="true">3</span>
+                <p>Você recebe a cotação de ACM direto da fábrica, com o custo reduzido.</p>
+              </div>
+            </div>
+
+            <div class="sidebar-block sidebar-block--dark">
+              <p class="sidebar-block__label">Por que a BMT</p>
+              <p>Somos uma trading company de comércio internacional. Atuamos como ponte entre sua construtora e a fábrica, não como revendedor. Isso é o que permite a redução de até 40% no custo.</p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section" id="contato-cta" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-section__inner">
+          <div class="fade-up">
+            <h2 class="cta-section__title" id="cta-heading">
+              Sua próxima compra de ACM pode custar até 40% menos.
+            </h2>
+            <p>
+              Fale com a BMT e descubra quanto sua obra economiza comprando direto da fábrica.
+            </p>
+          </div>
+          <div class="fade-up fade-up--delay-2" style="flex-shrink:0;">
+            <a href="#acm-form" class="btn btn--primary" style="font-size:1rem; padding:16px 36px;">
+              Solicitar cotação
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer" role="contentinfo" aria-label="Rodapé do site">
+    <div class="container">
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" aria-label="BMT-Interbiz — Início">
+            <img src="assets/logo_bmt.png" alt="BMT-Interbiz" width="130" height="44" loading="lazy" />
+          </a>
+          <p>Trading company internacional responsável pela execução de operações de importação e exportação por meio do alinhamento estruturado de fornecedores e processos disciplinados.</p>
+        </div>
+
+        <nav class="footer-col" aria-label="Navegação do rodapé — empresa">
+          <h4>Empresa</h4>
+          <ul role="list">
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="como-trabalhamos.html">Como Trabalhamos</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="industrias.html">Indústrias</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Navegação do rodapé — serviços">
+          <h4>Serviços</h4>
+          <ul role="list">
+            <li><a href="servicos.html#importacao">Importação</a></li>
+            <li><a href="servicos.html#exportacao">Exportação</a></li>
+            <li><a href="servicos.html#trade-management">Trade Management</a></li>
+            <li><a href="servicos.html#coordenacao">Coordenação Operacional</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul role="list">
+            <li><a href="contato.html">Fale Conosco</a></li>
+            <li><a href="#acm-form">Cotar ACM</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2025</span> BMT-Interbiz. Todos os direitos reservados.</p>
+        <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center;">
+          <a href="politica-privacidade.html">Política de Privacidade</a>
+          <a href="termos-de-uso.html">Termos de Uso</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+    }
+
+    /* ── FORMULÁRIO ACM — Web3Forms ── */
+    const form       = document.getElementById('acm-lead-form');
+    const successBox = document.getElementById('form-success');
+    const submitBtn  = form.querySelector('button[type="submit"]');
+    const btnOriginal = submitBtn.innerHTML;
+
+    form.querySelectorAll('[required]').forEach(field => {
+      field.addEventListener('blur', () => validateField(field));
+      field.addEventListener('input', () => { if (field.classList.contains('error')) validateField(field); });
+    });
+
+    function validateField(field) {
+      const isValid = field.checkValidity();
+      field.classList.toggle('error', !isValid);
+      field.setAttribute('aria-invalid', !isValid);
+      let errEl = field.parentElement.querySelector('.field-error');
+      if (!isValid) {
+        if (!errEl) {
+          errEl = document.createElement('p');
+          errEl.className = 'field-error';
+          errEl.setAttribute('role', 'alert');
+          errEl.style.cssText = 'font-family:var(--font-body);font-size:0.75rem;color:#c0392b;margin-top:4px;';
+          field.parentElement.appendChild(errEl);
+        }
+        if (field.validity.valueMissing) errEl.textContent = 'Este campo é obrigatório.';
+        else if (field.validity.typeMismatch) errEl.textContent = 'Por favor insira um e-mail válido.';
+        else errEl.textContent = 'Valor inválido.';
+      } else { if (errEl) errEl.remove(); }
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      let valid = true;
+      form.querySelectorAll('[required]').forEach(field => {
+        validateField(field);
+        if (!field.checkValidity()) valid = false;
+      });
+      if (!valid) { form.querySelector('.error')?.focus(); return; }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      const fromName  = form.querySelector('#nome').value.trim();
+      const fromEmail = form.querySelector('#email').value.trim();
+      const company   = form.querySelector('#empresa').value.trim();
+      const phone     = form.querySelector('#telefone').value.trim();
+      const estado    = form.querySelector('#estado').value;
+      const volume    = form.querySelector('#volume').value;
+      const message   = form.querySelector('#mensagem').value.trim();
+
+      const confirmBody = 'Olá, ' + fromName + '.\n\nRecebemos sua solicitação de cotação de ACM. Um especialista da BMT entrará em contato em breve para alinhar especificação e volume e montar sua cotação direto da fábrica.\n\nAtenciosamente,\nBMT-Interbiz\nbmt-interbiz.com';
+
+      const payload = {
+        access_key:       'c3ad7b8a-e275-4bd9-be29-826117e30927',
+        subject:          'NOVO LEAD ACM (Landing Page): encaminhar para Coelho',
+        from_name:        fromName,
+        email:            fromEmail,
+        produto:          'ACM (Chapa de Alumínio Composto)',
+        origem:           'Landing Page ACM (tráfego pago)',
+        company:          company,
+        phone:            phone,
+        estado:           estado,
+        volume:           volume || '-',
+        message:          message || '-',
+        replyto:          fromEmail,
+        // Auto-resposta ao lead
+        autoresponse:     'true',
+        autoresponse_subject: 'BMT-Interbiz: Recebemos sua solicitação de ACM',
+        autoresponse_message: confirmBody,
+      };
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+        if (data.success) {
+          form.style.display = 'none';
+          successBox.classList.add('visible');
+          successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          throw new Error(data.message || 'Send failed');
+        }
+      } catch (err) {
+        console.error('Web3Forms error:', err);
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = btnOriginal;
+        const errP = document.createElement('p');
+        errP.style.cssText = 'font-family:var(--font-body);font-size:0.85rem;color:#c0392b;margin-top:12px;';
+        errP.textContent = 'Erro ao enviar. Tente novamente.';
+        submitBtn.parentElement.appendChild(errP);
+        setTimeout(() => errP.remove(), 5000);
+      }
+    });
+
+    const style = document.createElement('style');
+    style.textContent = '.form-input.error,.form-select.error,.form-textarea.error{border-color:#c0392b;box-shadow:0 0 0 3px rgba(192,57,43,0.10);}';
+    document.head.appendChild(style);
+  </script>
+
+</body>
+</html>
