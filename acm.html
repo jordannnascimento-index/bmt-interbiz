@@ -51,15 +51,22 @@
     }
     .acm-hero__text { max-width: 600px; align-self: center; }
     .acm-hero__text .hero__title { margin-bottom: 18px; }
+    .acm-hero__text .hero__title sup { font-size: 0.4em; top: -0.7em; font-weight: 700; }
     .acm-hero__text .hero__subtitle { margin-bottom: 22px; color: rgba(255,255,255,0.85); }
     .acm-hero__text .hero__subtitle:last-of-type { margin-bottom: 36px; }
-    .hero__disclaimer {
-      margin: 0 0 30px;
-      max-width: 540px;
+
+    /* Nota do asterisco — rodapé fino da página */
+    .page-disclaimer {
+      background: var(--navy);
+      border-top: 1px solid var(--border-dark);
+      padding: 26px 0;
+    }
+    .page-disclaimer p {
       font-family: var(--font-body);
       font-size: 0.78rem;
       line-height: 1.6;
       color: rgba(255,255,255,0.55);
+      max-width: 760px;
     }
 
     /* Imagem da direita — troque por uma foto de fachada/obra em ACM quando disponível.
@@ -96,20 +103,8 @@
       background: var(--orange);
     }
 
-    /* Nav reduzida: Home + botão de contato */
+    /* Nav reduzida: somente logo + botão de contato */
     .nav-actions { display: flex; align-items: center; gap: 8px; }
-    .nav-home {
-      color: rgba(255,255,255,0.85);
-      font-family: var(--font-body);
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      padding: 8px 14px;
-      border-radius: var(--radius);
-      transition: color var(--transition), background var(--transition);
-    }
-    .nav-home:hover { color: #fff; background: rgba(255,255,255,0.08); }
 
     /* Faixa de provas / números */
     .acm-stats { background: var(--navy-mid); padding: 0; }
@@ -319,7 +314,7 @@
     /* Galeria de aplicações */
     .acm-gallery {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
       margin-top: 48px;
     }
@@ -423,12 +418,11 @@
     <nav id="site-nav" aria-label="Navegação principal">
       <div class="nav-inner">
 
-        <a href="index.html" class="nav-logo" aria-label="BMT-Interbiz — Página inicial">
+        <a href="#" class="nav-logo" aria-label="BMT-Interbiz">
           <img src="assets/logo_bmt.png" alt="BMT-Interbiz" width="120" height="40" />
         </a>
 
         <div class="nav-actions">
-          <a href="index.html" class="nav-home">Home</a>
           <a href="#acm-form" class="nav-cta">Fale Conosco</a>
         </div>
 
@@ -449,9 +443,6 @@
               Compre ACM direto da fábrica e<br />
               <em>reduza até 40%<sup>*</sup></em> no custo da sua obra
             </h1>
-            <p class="hero__disclaimer">
-              *A redução de até 40% varia de acordo com a composição do pedido, a taxa do dólar e os custos logísticos.
-            </p>
             <p class="hero__subtitle">
               Construtora que compra com inteligência compra direto da fábrica, sem revenda e sem intermediário.
             </p>
@@ -552,6 +543,10 @@
           <figure class="acm-gallery__item fade-up fade-up--delay-2">
             <div class="acm-gallery__img" style="background-image:url('assets/acm_empresas.avif')" role="img" aria-label="Edifício corporativo em ACM"></div>
             <figcaption>Edifícios corporativos e institucionais</figcaption>
+          </figure>
+          <figure class="acm-gallery__item fade-up fade-up--delay-3">
+            <div class="acm-gallery__img" style="background-image:url('assets/building_acm.avif')" role="img" aria-label="Prédio empresarial em ACM"></div>
+            <figcaption>Sedes e prédios empresariais</figcaption>
           </figure>
         </div>
       </div>
@@ -841,64 +836,17 @@
       </div>
     </section>
 
-  </main>
-
-  <!-- FOOTER -->
-  <footer id="site-footer" role="contentinfo" aria-label="Rodapé do site">
-    <div class="container">
-
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" aria-label="BMT-Interbiz — Início">
-            <img src="assets/logo_bmt.png" alt="BMT-Interbiz" width="130" height="44" loading="lazy" />
-          </a>
-          <p>Trading company internacional responsável pela execução de operações de importação e exportação por meio do alinhamento estruturado de fornecedores e processos disciplinados.</p>
-        </div>
-
-        <nav class="footer-col" aria-label="Navegação do rodapé — empresa">
-          <h4>Empresa</h4>
-          <ul role="list">
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="como-trabalhamos.html">Como Trabalhamos</a></li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="industrias.html">Indústrias</a></li>
-          </ul>
-        </nav>
-
-        <nav class="footer-col" aria-label="Navegação do rodapé — serviços">
-          <h4>Serviços</h4>
-          <ul role="list">
-            <li><a href="servicos.html#importacao">Importação</a></li>
-            <li><a href="servicos.html#exportacao">Exportação</a></li>
-            <li><a href="servicos.html#trade-management">Trade Management</a></li>
-            <li><a href="servicos.html#coordenacao">Coordenação Operacional</a></li>
-          </ul>
-        </nav>
-
-        <div class="footer-col">
-          <h4>Contato</h4>
-          <ul role="list">
-            <li><a href="contato.html">Fale Conosco</a></li>
-            <li><a href="#acm-form">Cotar ACM</a></li>
-          </ul>
-        </div>
+    <!-- NOTA DO ASTERISCO -->
+    <div class="page-disclaimer">
+      <div class="container">
+        <p>*A redução de até 40% varia de acordo com a composição do pedido, a taxa do dólar e os custos logísticos.</p>
       </div>
-
-      <div class="footer-bottom">
-        <p>&copy; <span id="current-year">2025</span> BMT-Interbiz. Todos os direitos reservados.</p>
-        <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center;">
-          <a href="politica-privacidade.html">Política de Privacidade</a>
-          <a href="termos-de-uso.html">Termos de Uso</a>
-        </div>
-      </div>
-
     </div>
-  </footer>
+
+  </main>
 
   <!-- JAVASCRIPT -->
   <script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-
     const nav = document.getElementById('site-nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
