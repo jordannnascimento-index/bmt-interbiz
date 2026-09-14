@@ -757,3 +757,479 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
   .hero { min-height: auto; padding-top: 0; }
   .hero__overlay { background: rgba(0,0,0,0.5) !important; }
 }
+
+/* ============================================================
+   BMT-INTERBIZ — Motos e Scooters Elétricas
+   Complemento do style.css. Usa as variáveis globais do site.
+   Todas as classes têm prefixo .moto- para não colidir.
+   ============================================================ */
+
+/* ---------- HERO no formato da capa do catálogo ---------- */
+.moto-hero {
+  position: relative;
+  background: var(--navy);
+  min-height: 640px;
+  display: flex;
+  align-items: flex-end;
+  padding: 150px 0 0;
+  overflow: hidden;
+}
+.moto-hero__bg {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 62%;
+  background-image: url('assets/motos/hero_moto.png?v=5');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+/* dissolve a foto para dentro do navy, como na capa */
+.moto-hero__veil {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 62%;
+  background-image: linear-gradient(90deg, var(--navy) 0%, rgba(13,31,53,0.88) 14%, rgba(13,31,53,0.30) 42%, rgba(13,31,53,0) 72%);
+}
+.moto-hero .container { position: relative; z-index: 2; width: 100%; }
+.moto-hero__text { max-width: 620px; padding-bottom: 8px; }
+.moto-hero__panel {
+  background: var(--navy);
+  border-left: 4px solid var(--orange);
+  padding: 34px 38px;
+  margin: 20px 0 30px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+}
+.moto-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.1rem, 4.2vw, 3.3rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.moto-hero__sub {
+  margin-top: 14px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.78);
+  max-width: 42ch;
+}
+.moto-hero__actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+/* barra de indicadores */
+.moto-stats {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border-dark);
+  margin-top: 56px;
+}
+.moto-stats__item { padding: 22px 24px; border-left: 1px solid var(--border-dark); }
+.moto-stats__item:first-child { padding-left: 0; border-left: none; }
+.moto-stats__value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--orange-light);
+  white-space: nowrap;
+}
+.moto-stats__label {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ---------- Etapas numeradas (página "A Empresa") ---------- */
+.moto-etapas { border-top: 1px solid var(--border); }
+.moto-etapa {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 8px 20px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+}
+.moto-etapa__num {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--orange);
+}
+.moto-etapa__nome {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+}
+.moto-etapa__txt { grid-column: 2; font-size: 0.95rem; line-height: 1.7; color: var(--text-light); }
+
+/* ---------- Três linhas (página "A Operação") ---------- */
+.moto-linhas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.moto-linha-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.moto-linha-card:hover { box-shadow: 0 10px 36px rgba(0,0,0,0.10); transform: translateY(-3px); }
+.moto-linha-card__top { padding: 28px 28px 24px; }
+.moto-linha-card__nome {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.moto-linha-card__desc { margin-top: 12px; font-size: 0.95rem; line-height: 1.65; color: var(--text-light); }
+.moto-linha-card__faixas { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--border); }
+.moto-linha-card__faixas li {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+  padding: 5px 0;
+}
+.moto-linha-card__faixas li:last-child {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--mid-gray);
+}
+.moto-linha-card__fig {
+  margin-top: auto;
+  aspect-ratio: 16 / 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px 24px;
+  background: var(--warm-white);
+  border-top: 1px solid var(--border);
+}
+.moto-linha-card__fig img { max-height: 100%; width: auto; object-fit: contain; mix-blend-mode: multiply; }
+
+/* ---------- Bloco de cada linha ---------- */
+.moto-bloco { padding-top: 72px; border-top: 1px solid var(--border); }
+.moto-bloco:first-of-type { padding-top: 0; border-top: none; }
+.moto-bloco + .moto-bloco { margin-top: 72px; }
+.moto-bloco__head { max-width: 900px; margin-bottom: 44px; }
+.moto-bloco__tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--navy);
+  padding: 7px 16px;
+  border-radius: var(--radius);
+  margin-bottom: 18px;
+}
+.moto-bloco__titulo {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--navy);
+  line-height: 1.05;
+}
+.moto-bloco__conta {
+  margin-top: 6px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange-dark);
+}
+.moto-bloco__texto { margin-top: 20px; font-size: 1rem; line-height: 1.8; color: var(--text-light); }
+
+/* ---------- Grade de modelos ---------- */
+.moto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+  align-items: start;
+  gap: 24px;
+}
+.moto-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.moto-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.10); transform: translateY(-2px); }
+.moto-card__fig {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--border);
+}
+.moto-card__fig img { max-height: 100%; width: auto; object-fit: contain; mix-blend-mode: multiply; }
+.moto-card__code {
+  position: absolute;
+  top: 0; left: 0;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: var(--navy);
+  padding: 5px 14px;
+}
+.moto-card__body { padding: 18px 20px 4px; }
+.moto-card__body li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.moto-card__body li:last-child { border-bottom: none; }
+.moto-card__key {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  flex-shrink: 0;
+}
+.moto-card__val {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: right;
+}
+.moto-card__more {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  transition: background var(--transition), color var(--transition);
+}
+.moto-card__more:hover { background: var(--navy); color: #fff; }
+.moto-card__more-icon { font-family: var(--font-heading); font-size: 1.2rem; line-height: 1; color: var(--steel); }
+.moto-card__more:hover .moto-card__more-icon { color: var(--orange-light); }
+
+/* ---------- Modal de especificações ---------- */
+.moto-modal {
+  width: min(580px, calc(100vw - 32px));
+  max-height: min(84vh, 780px);
+  padding: 0;
+  border: none;
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.32);
+  overflow: hidden;
+}
+.moto-modal::backdrop {
+  background: rgba(13, 31, 53, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.moto-modal__box { display: flex; flex-direction: column; max-height: inherit; }
+.moto-modal__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 26px 32px 22px;
+  background: var(--navy);
+}
+.moto-modal__code {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: var(--orange-light);
+}
+.moto-modal__title {
+  margin-top: 8px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+.moto-modal__close {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  border: 1px solid var(--border-dark);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  border-radius: var(--radius);
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+.moto-modal__close:hover { background: var(--orange); border-color: var(--orange); color: var(--navy); }
+.moto-modal__body { padding: 8px 32px 24px; overflow-y: auto; }
+.moto-modal__foot { padding: 0 32px 28px; }
+.moto-modal__foot .btn { width: 100%; justify-content: center; }
+.moto-ficha dt {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.moto-ficha dt:first-child { padding-top: 0; margin-top: 0; border-top: none; }
+.moto-ficha dd { margin-top: 5px; font-size: 0.95rem; line-height: 1.6; color: var(--text); }
+
+/* ---------- Notas e escopo ---------- */
+.moto-notas { display: grid; grid-template-columns: 1.25fr 1fr; gap: 56px; align-items: start; }
+.moto-lista li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+.moto-lista li::before {
+  content: '';
+  position: absolute;
+  top: 9px; left: 0;
+  width: 10px; height: 10px;
+  background: var(--orange);
+}
+.moto-sub {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+  margin-bottom: 22px;
+}
+
+/* ---------- Fechamento e formulário ---------- */
+.moto-cta__titulo {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.08;
+  color: #fff;
+}
+.moto-cta__titulo em { font-style: normal; color: var(--orange); }
+.moto-cta__texto { margin-top: 20px; font-size: 1.05rem; line-height: 1.75; color: rgba(255,255,255,0.78); max-width: 56ch; }
+.moto-cta__dados { display: flex; flex-wrap: wrap; gap: 56px; margin-top: 40px; }
+.moto-cta__rot {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+.moto-cta__val { color: #fff; font-size: 1rem; }
+.moto-cta__val:hover { color: var(--orange-light); }
+
+.moto-form-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
+.moto-form { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; }
+.moto-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.moto-form__note { font-size: 0.8rem; color: var(--mid-gray); margin-bottom: 20px; }
+.moto-form__note a { color: var(--orange-dark); text-decoration: underline; }
+.moto-form .btn { width: 100%; justify-content: center; }
+.moto-form__success {
+  display: none;
+  border-left: 3px solid var(--orange);
+  background: var(--warm-white);
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+.moto-form__success.is-visible { display: block; }
+.moto-form__success strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.moto-form__fail { display: none; margin-top: 16px; font-size: 0.85rem; color: #C0392B; }
+.moto-form__fail.is-visible { display: block; }
+.moto-aside__note { border-left: 3px solid var(--orange); padding-left: 24px; margin-top: 36px; }
+.moto-aside__note strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1024px) {
+  .moto-hero { min-height: 0; padding-top: 120px; }
+  .moto-hero__bg, .moto-hero__veil { width: 100%; }
+  .moto-hero__veil { background-image: linear-gradient(180deg, rgba(13,31,53,0.86) 0%, rgba(13,31,53,0.62) 45%, rgba(13,31,53,0.92) 100%); }
+  .moto-hero__text { max-width: none; }
+  .moto-linhas { grid-template-columns: 1fr; }
+  .moto-notas { grid-template-columns: 1fr; gap: 40px; }
+  .moto-form-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 768px) {
+  .moto-hero__panel { padding: 24px; }
+  .moto-stats { grid-template-columns: repeat(2, 1fr); margin-top: 40px; }
+  .moto-stats__item { padding: 18px 16px; }
+  .moto-stats__item:nth-child(odd) { padding-left: 0; border-left: none; }
+  .moto-stats__item:nth-child(n+3) { border-top: 1px solid var(--border-dark); }
+  .moto-stats__value { font-size: 1.5rem; }
+  .moto-etapa { grid-template-columns: 52px 1fr; }
+  .moto-cta__dados { gap: 28px; }
+  .moto-form { padding: 28px 24px; }
+  .moto-form-row { grid-template-columns: 1fr; gap: 0; }
+  .moto-modal__head { padding: 22px 24px 18px; }
+  .moto-modal__body { padding: 8px 24px 20px; }
+  .moto-modal__foot { padding: 0 24px 24px; }
+}
