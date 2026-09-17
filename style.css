@@ -1233,3 +1233,49 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
   .moto-modal__body { padding: 8px 24px 20px; }
   .moto-modal__foot { padding: 0 24px 24px; }
 }
+/* =========================================================
+   CONTATOS NO RODAPÉ, REDES SOCIAIS E BOTÃO DE WHATSAPP
+   ========================================================= */
+.footer-contact { display: flex; flex-direction: column; gap: 10px; }
+.footer-contact a {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.875rem; color: rgba(255,255,255,0.72);
+  transition: color var(--transition);
+}
+.footer-contact a:hover { color: var(--orange-light); }
+.footer-contact svg { width: 15px; height: 15px; flex: none; color: var(--orange-light); }
+
+.footer-social { margin-top: 20px; }
+.footer-social__label {
+  font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.28) !important; margin-bottom: 10px;
+}
+.footer-social__list { display: flex; flex-wrap: wrap; gap: 8px; }
+.footer-social__list a {
+  display: inline-flex; align-items: center;
+  padding: 7px 12px; border: 1px solid rgba(255,255,255,0.18);
+  font-family: var(--font-body); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.04em; color: rgba(255,255,255,0.72);
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
+}
+.footer-social__list a:hover {
+  color: #fff; border-color: var(--orange); background: var(--orange);
+}
+
+.wa-float {
+  position: fixed; right: 20px; bottom: 20px; z-index: 900;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 18px 12px 14px;
+  background: #25D366; color: #fff;
+  font-family: var(--font-body); font-size: 0.9rem; font-weight: 700;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+.wa-float:hover { background: #1EBE5A; color: #fff; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,0,0,0.3); }
+.wa-float svg { width: 22px; height: 22px; flex: none; }
+@media (max-width: 640px) {
+  .wa-float { right: 14px; bottom: 14px; padding: 12px; }
+  .wa-float span { display: none; }
+}
+@media print { .wa-float { display: none !important; } }
